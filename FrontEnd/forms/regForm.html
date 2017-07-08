@@ -167,7 +167,7 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="#" style="color: #fff;">Team 19 Project</a>
+	      <a class="navbar-brand" href="#" style="color: #fff;">Amhog Sadhna</a>
 	    </div>
 
 	    
@@ -435,50 +435,50 @@
 		                				<td>First Name</td>
 		                				<td>:</td>
 		                				<td>
-		                					<input type="text" name="first_name">
+		                					<input type="text" name="first_name" id="first_name_l4">
 		                				</td>
 		                			</tr>
 		                			<tr>
 		                				<td>Last Name</td>
 		                				<td>:</td>
 		                				<td>
-		                					<input type="text" name="last_name">
+		                					<input type="text" name="last_name" id="last_name_l4">
 		                				</td>
 		                			</tr>
 		                			<tr>
 		                				<td>Age</td>
 		                				<td>:</td>
 		                				<td>
-		                					<input type="number" name="age">
+		                					<input type="number" name="age" id="age_l4">
 		                				</td>
 		                			</tr>
 		                			<tr>
 		                				<td>gender</td>
 		                				<td>:</td>
 		                				<td>
-		                					<input type="radio" name="gender">&nbsp;Male
-		                					&nbsp;&nbsp;<input type="radio" name="gender">&nbsp;Female
+		                					<input type="radio" name="gender" id="gender_male_l4">&nbsp;Male
+		                					&nbsp;&nbsp;<input type="radio" name="gender" id="gender_female_l4">&nbsp;Female
 		                				</td>
 		                			</tr>
 		                			<tr>
 		                				<td>Contact No.</td>
 		                				<td>:</td>
 		                				<td>
-		                					<input type="number" name="mobile">
+		                					<input type="number" name="mobile" id="name_l4">
 		                				</td>
 		                			</tr>
 		                			<tr>
 		                				<td>Address</td>
 		                				<td>:</td>
 		                				<td>
-		                					<input type="text" name="add">
+		                					<input type="text" name="add" id="add_l4">
 		                				</td>
 		                			</tr>
 		                			<tr>
 		                				<td>Email ID</td>
 		                				<td>:</td>
 		                				<td>
-		                					<input type="email" name="email">
+		                					<input type="email" name="email" id="email_l4">
 		                				</td>
 		                			</tr>
 		                			<tr>
@@ -501,7 +501,7 @@
 			                					
 		                				</td>
 		                				<td>
-		                					<strong><span style="color: #ab0303;" id="error_text_l3">Please Enter the correct details!</span></strong>	
+		                					<strong><span style="color: #ab0303;" id="error_text_l4">Please Enter the correct details!</span></strong>	
 		                				</td>
 		                			</tr>
 		                		</tbody>
@@ -871,22 +871,10 @@
 			    $("#level_three_button").click(function(event){
 			    	event.preventDefault();
 
-
-			    	var tab=$(this).attr("data-val");
-
-			    	$("#l3").removeClass("current");
-			    	$("#l4").addClass("current");
-
-			    	$(".tab-content").not(tab).css("display", "none");
-			        $(tab).fadeIn();
-
-
-
-
 			        var first_name_val=$("#first_name_l3").val();
 			    	var last_name_val=$("#last_name_l3").val();
 			    	var age_val=$("#age_l3").val();
-			    	// var first_name_val=$("#first_name_l3").val();
+			    	
 			    	var gender;
 			    	if($("#gender_male_l3").is(':checked')){
 			    		gender="Male";
@@ -895,7 +883,13 @@
 			    		gender="Female";
 			    	}
 			    	var mobile_val=$("#mobile_l3").val();
-			    	var address=$("#address_l3").val();
+			    	var house_no_l3=$("#house_no_l3").val();
+			    	var city_l3=$("#city_l3").val();
+			    	var state_l3=$("#state_l3").val();
+			    	var country_l3=$("#country_l3").val();
+			    	var pin_l3=$("#pin_l3").val();
+			    	var street_l3=$("#street_l3").val();
+
 
 			    	var flag=1;
 
@@ -908,33 +902,50 @@
 			    	if(gender!=gender){flag=0;}
 			    	if(mobile_val!=mobile){flag=0;$("#mobile_l3").addClass("error");}
 			    	// alert(address);
-			    	alert(house+" "+street+" "+city+" "+state+" "+country+" "+pin);
-			    	if(address!=(house+" "+street+" "+city+" "+state+" "+country+" "+pin)){flag=0;$("#address_l3").addClass("error");}
+			    	// console.log(house+" "+street+" "+city+" "+state+" "+country+" "+pin);
+			    	// console.log(address);
+			    	if(house_no_l3!=(house))
+			    		{flag=0;$("#house_no_l3").addClass("error");}
+			    		 
+			    		
+			    		if(city_l3!=(city))
+			    		{
+			    		 flag=0;$("#city_l3").addClass("error");
+			    		}
+			    		if(street_l3!=(city))
+			    		{
+			    		 flag=0;$("#street_l3").addClass("error");
+			    		}
+			    		if(state_l3!=(state))
+			    		{
+			    		 flag=0;$("#state_l3").addClass("error");
+			    		}
+			    		alert(country+" "+country_l3);
+			    		if(country_l3!=(country))
+			    		{
+			    		 flag=0;$("#country_l3").addClass("error");
+			    		}
+			    		if(pin_l3!=(pin))
+			    		{
+			    		 flag=0;$("#pin_l3").addClass("error");
+			    		}
 
 			    	if(flag==1){
 			    		var tab=$(this).attr("data-val");
 
-				    	$("#l2").removeClass("current");
-				    	$("#l3").addClass("current");
+				    	$("#l3").removeClass("current");
+				    	$("#l4").addClass("current");
 
 				    	$(".tab-content").not(tab).css("display", "none");
 				        $(tab).fadeIn();	
-				        $("#response-correct").slideDown(500);
-				        setTimeout(function(){
-		                    $("#response-correct").slideUp(500);
-		                        
-		                    }, 2500);
 			    	}else{
 			    		$("#error_text_l3").show();
-			    		$("#response-wrong").slideDown(500);
-				        setTimeout(function(){
-		                    $("#response-wrong").slideUp(500);
-		                        
-		                    }, 2500);
 			    	}
 
 
 			    });
+
+
 			    $("#level_four_button").click(function(event){
 			    	event.preventDefault();
 			    	var tab=$(this).attr("data-val");
