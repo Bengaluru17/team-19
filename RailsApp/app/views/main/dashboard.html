@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Project</title>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../css/jquery.dataTables.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<style type="text/css">
+		<style type="text/css">
+		body{
+			background: #ab0303;
+		    background-repeat: no-repeat;
+		    background-position: center 0;
+		    background-size: cover;
+		    background-attachment: fixed;
+		    font-family: 'Raleway', sans-serif;
+		}
+		.wrapper{
+			width: 90%;
+			margin:auto;
+		}
+		.full-height {
+		    height: 100vh;
+		}
+		.flex-center {
+		    align-items: center;
+		    display: flex;
+		    justify-content: center;
+		    
+		}
+		.position-ref {
+		    position: relative;
+		}
+		input{
+			background: transparent;
+			border:1px solid #000;
+			box-shadow: 0;
+			padding: 15px;
+			margin: 10px;
+			color: #000;
+			width: 100%;
+		}
+		#button{
+			background: transparent;
+			border:1px solid #000;
+			box-shadow: 0;
+			padding: 15px;
+			margin: 10px;
+			color: #000;
+			width: 100%;
+		}
+		input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+		    color:    #000;
+		}
+		input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+		   color:    #000;
+		   opacity:  1;
+		}
+		input::-moz-placeholder { /* Mozilla Firefox 19+ */
+		   color:    #000;
+		   opacity:  1;
+		}
+		input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+		   color:    #000;
+		}
+		a{
+			color: #000;
+			text-decoration: none;
+			font-size: 16px;
+		}
+		a:hover{
+			color: #000;
+			text-decoration: none;
+		}
+		#domain{
+			margin: 10px;
+			border:1px solid #dcdcdc;
+			border-radius: 10px;
+		}
+		#medals{
+			margin: 10px;
+			border:1px solid #64b5f6;
+			background: #e3f2fd  ;
+			border-radius: 15px;
+		}
+		.col-md-4{
+			padding: 0;
+		}
+		.side-bar{
+        	background: #fff;
+        	height: 80vh;
+        	padding: 10px;
+        	border-radius: 5px;
+        	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+        }
+        .side-bar ul{
+        	padding: 0;
+        	margin: 0;
+        }
+        .side-bar ul li{
+        	list-style: none;
+        	padding: 10px;
+        	font-size: 16px;
+        }
+        .side-bar ul li a{
+        	margin-left: 5px;
+        }
+        #dropdown_options:focus{
+			background: #0d47a1 ;
+		}
+		/*#medals .row{
+			background: #ab0303;
+		}*/
+	</style>
+	</style>
+</head>
+<body>
+
+	<nav class="navbar navbar-default" style="background: #1e88e5; border:0;border-radius: 0;">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="#" style="color: #fff;">Team 19 Project</a>
+	    </div>
+
+	    
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+	    	<ul class="nav navbar-nav navbar-right">
+
+	    		<li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #fff;" id="dropdown_options">Progress<span class="caret"></span></a>
+		          <ul class="dropdown-menu">
+		            <li><a href="#">Gold 10</a></li>
+		            <li><a href="#">Silver 10</a></li>
+		            <li><a href="#">Bronze 10</a></li>
+		          </ul>
+		        </li>
+
+		        
+	    		<li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #fff;" id="dropdown_options">Options<span class="caret"></span></a>
+		          <ul class="dropdown-menu">
+		            <li><a href="#">Profile</a></li>
+		            <li><a href="#">Logout</a></li>
+		          </ul>
+		        </li>
+
+		        
+		      </ul>
+
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+
+	<div class="wrapper">
+
+		<center>
+			<h2>Dashboard</h2>
+			<hr style="margin-bottom: 50px;">
+		</center>
+
+		<h5 style="margin-top: 20px;">Basic Tutorials</h5>
+		<hr style="margin: 2px;margin-bottom: 10px;">
+
+		<div class="row">
+			<div class="col-md-3">
+				<center>
+					<div id="domain">
+						<div class="row">
+							<div class="col-md-3">
+								<center>
+								<img src="../img/1.png" style="width: 80px;padding: 10px;">
+								</center>
+							</div>
+							<div class="col-md-3">
+								<center>
+									<h4 style="margin-left: 10px;padding-top: 15px;">Basic</h4>	 		
+								</center>
+							</div>
+						</div>
+						
+					</div>
+				</center>	
+			</div>
+			<div class="col-md-3">
+				<center>
+					<div id="domain">
+						<div class="row">
+							<div class="col-md-3">
+								<center>
+								<img src="../img/1.png" style="width: 80px;padding: 10px;">
+								</center>
+							</div>
+							<div class="col-md-3">
+								<center>
+									<h4 style="margin-left: 10px;padding-top: 15px;">Calculations</h4>	 		
+								</center>
+							</div>
+						</div>
+						
+					</div>
+				</center>	
+			</div>
+		</div>
+
+
+		<h5 style="margin-top: 20px;">Advance Tutorials</h5>
+		<hr style="margin: 2px;margin-bottom: 10px;">
+
+		<div class="row">
+			<div class="col-md-3">
+				<center>
+					<a href="forms.html">
+					<div id="domain">
+						<div class="row">
+							<div class="col-md-3">
+								<center>
+								<img src="../img/1.png" style="width: 80px;padding: 10px;">
+								</center>
+							</div>
+							<div class="col-md-6">
+								<center>
+									<h4 style="margin-left: 10px;padding-top: 15px;">Form Filling</h4>	 		
+								</center>
+							</div>
+						</div>
+						
+					</div>
+					</a>
+				</center>	
+			</div>
+			<div class="col-md-3">
+				<center>
+					<div id="domain">
+						<div class="row">
+							<div class="col-md-3">
+								<center>
+								<img src="../img/1.png" style="width: 80px;padding: 10px;">
+								</center>
+							</div>
+							<div class="col-md-6">
+								<center>
+									<h4 style="margin-left: 10px;padding-top: 15px;">Uploading</h4>	 		
+								</center>
+							</div>
+						</div>
+						
+					</div>
+				</center>	
+			</div>
+			
+			<div class="col-md-3">
+				<center>
+					<div id="domain">
+						<div class="row">
+							<div class="col-md-3">
+								<center>
+								<img src="../img/1.png" style="width: 80px;padding: 10px;">
+								</center>
+							</div>
+							<div class="col-md-6">
+								<center>
+									<h4 style="margin-left: 10px;padding-top: 15px;">Basic 2</h4>	 		
+								</center>
+							</div>
+						</div>
+						
+					</div>
+				</center>	
+			</div>
+		</div>	
+		
+		
+		<h2 class="text-center" style="margin-top: 90px;">Progress</h2>
+		<hr>
+		<div class="row">
+			<div class="col-md-4">
+				<center>
+					<div id="medals">
+						<div class="row">
+							<div class="col-md-3">
+								<center>
+								<img src="../img/gold.png" style="width: 80px;padding: 10px;">
+								</center>
+							</div>
+							<div class="col-md-6">
+								<center>
+									<h4 style="margin-left: 10px;padding-top: 20px;">10 medals</h4>	 		
+								</center>
+							</div>
+						</div>
+						
+					</div>
+				</center>	
+			</div>
+			<div class="col-md-4">
+				<center>
+					<div id="medals">
+						<div class="row">
+							<div class="col-md-3">
+								<center>
+								<img src="../img/silver.png" style="width: 80px;padding: 10px;">
+								</center>
+							</div>
+							<div class="col-md-6">
+								<center>
+									<h4 style="margin-left: 10px;padding-top: 20px;">10 medals</h4>	 		
+								</center>
+							</div>
+						</div>
+						
+					</div>
+				</center>	
+			</div>
+			<div class="col-md-4">
+				<center>
+					<div id="medals">
+						<div class="row">
+							<div class="col-md-3">
+								<center>
+								<img src="../img/bronze.png" style="width: 80px;padding: 10px;">
+								</center>
+							</div>
+							<div class="col-md-6">
+								<center>
+									<h4 style="margin-left: 10px;padding-top: 20px;">10 medals</h4>	 		
+								</center>
+							</div>
+						</div>
+						
+					</div>
+				</center>	
+			</div>
+		</div>
+	</div>
+
+	
+
+	<hr style="margin-top: 80px;">
+
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<!-- <script src="js/jquery-3.2.1.js"></script>  *****FOR NO CONNECTION****** -->
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/d3.js"></script>
+    <script src="../js/custom.js"></script>
+    <script src="../js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript">
+          $(document).ready(function() {
+            $('#table').DataTable();  //Table name to put data table function
+          } );
+      </script>
+</body>
+</html>
