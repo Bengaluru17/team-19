@@ -195,9 +195,17 @@
 	</nav>
 
 	<div class="wrapper">
-		<hr>
-		<h2>Basic Tutorials</h2>
-		<hr>
+		<hr style="margin: 5px;">
+			<div class="row">
+				<div class="col-md-1">
+					<img src="img/basic.png" style="width:70px;">
+				</div>
+				<div class="col-md-9">
+					<h2>Basic Tutorials</h2>		
+				</div>
+			</div>
+			
+		<hr style="margin: 5px;margin-bottom: 30px;">
 
 		<div class="row">
 			<div class="col-md-6">
@@ -220,7 +228,7 @@
 				            			<td>-></td>
 				            			<td>
 				            				<input type="text" name="t1" id="t1">
-				            				<span id="error_text1">Please Enter Valid Field!</span>
+				            				<span id="error_text1">Please Enter Valid Value!</span>
 				            			</td>
 				            		</tr>
 				            		<tr>
@@ -231,7 +239,7 @@
 				            			<td>-></td>
 				            			<td>
 				            				<input type="text" name="t2" id="t2">
-				            				<span id="error_text2">Please Enter Valid Field!</span>
+				            				<span id="error_text2">Please Enter Valid Value!</span>
 				            			</td>
 				            		</tr>
 				            		<tr>
@@ -242,7 +250,7 @@
 				            			<td>-></td>
 				            			<td>
 				            				<input type="text" name="t3" id="t3">
-				            				<span id="error_text3">Please Enter Valid Field!</span>
+				            				<span id="error_text3">Please Enter Valid Value!</span>
 				            			</td>
 				            		</tr>
 				            		<tr>
@@ -287,7 +295,9 @@
 				        </div>
 
 				        <div id="tab-3" class="tab-content">
-				            <h1>Level 3</h1>
+				            <h2>Congratulations</h2>
+				            <h4>you have completed the basic level of the tutorials!</h4>
+				            <img src="img/congo.png">
 				        </div>
 				        
 				    </div>
@@ -322,6 +332,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript">
           $(document).ready(function() {
+          	var count=10;
             $('#table').DataTable();  //Table name to put data table function
             $("#error_text1").hide();
      		$("#error_text2").hide();
@@ -349,6 +360,7 @@
         });
      </script>
      <script type="text/javascript">
+
      	$("#level_one_button").click(function(){
 
      		$word1=$("#t1_word").val();
@@ -383,6 +395,7 @@
                         
                     }, 2000);
      		}else{
+     			count=count-1;
      			$("#response-bad").slideDown(500);
 		        setTimeout(function(){
                     $("#response-bad").slideUp(500);
@@ -425,6 +438,7 @@
                     }, 2000);
      		}
      		else{
+     			count=count-1;
      			$("#response-bad").slideDown(500);
 		        setTimeout(function(){
                     $("#response-bad").slideUp(500);
