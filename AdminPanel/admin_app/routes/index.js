@@ -27,14 +27,14 @@ client.connect();
 
 
 
-var query = client.query("SELECT * FROM students");
+var query = client.query("SELECT * FROM scores");
 query.on("row", function(row,result) {
     result.addRow(row);
 });
 query.on("end", function (result) {
     console.log(result.rows);
     client.end();
-    res.render('index1', {result1:result});
+    res.render('index1', {result1:result.rows});
 });
 
 	//console.log(result.rows);
@@ -45,11 +45,9 @@ router.get('/stats', function(req, res, next) {
   res.render('stats-bar1', { title: 'Express' });
 });
 
-
 router.get('/overall', function(req, res, next) {
   res.render('overall', { title: 'Express' });
 });
-
 
 
 module.exports = router;
