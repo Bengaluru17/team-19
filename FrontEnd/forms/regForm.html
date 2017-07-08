@@ -85,7 +85,7 @@
 		    line-height: 30px;
 		    float: left;
 		    margin-right: 10px;
-		    background-color: #ccc;
+		    background-color: #1e88e5;
 		    border-top: 1px solid #d4d4d1;
 		    border-right: 1px solid #d4d4d1;
 		    border-left: 1px solid #d4d4d1;
@@ -139,6 +139,19 @@
 		.error{
 			border: 1px solid #ab0303;
 		}
+		#response-correct{
+			background: #43a047;
+			color: #fff;
+			padding: 20px;
+		}
+		#response-wrong{
+			background: #ab0303;
+			color: #fff;
+			padding: 20px;
+		}
+		#response-correct,#response-wrong{
+			display: none;
+		}
 	</style>
 	</style>
 </head>
@@ -189,9 +202,24 @@
 	</nav>
 
 	<div class="wrapper">
-		<hr>
-			<h1>Registration Forms Tutorials</h1>
-		<hr>
+		<hr style="margin: 5px;">
+			<div class="row">
+				<div class="col-md-1">
+					<img src="../img/reg.png" style="width:70px;">
+				</div>
+				<div class="col-md-6">
+					<h1>Registration Forms Tutorials</h1>
+				</div>
+				<div class="col-md-3 pull-right">
+					<div id="response-correct">
+						<center><h4>Correct Answer!</h4></center>
+					</div>
+					<div id="response-wrong">
+						<center><h4>Incorrect Answer!</h4></center>
+					</div>
+				</div>
+			</div>
+		<hr style="margin: 5px;margin-bottom: 30px;">
 		
 		<div class="row">
 			<div class="col-md-6">
@@ -752,13 +780,30 @@
 
 					    	$(".tab-content").not(tab).css("display", "none");
 					        $(tab).fadeIn();
+
+					        $("#response-correct").slideDown(500);
+					        setTimeout(function(){
+			                    $("#response-correct").slideUp(500);
+			                        
+			                    }, 2500);
+
 			        	}else{
 			        		$("#age_l1").addClass("error");
 			        		$("#error_text_l1").show();
+			        		$("#response-wrong").slideDown(500);
+					        setTimeout(function(){
+			                    $("#response-wrong").slideUp(500);
+			                        
+			                    }, 2500);
 			        	}
 			        }else{
 						$("#username_l1").addClass("error");
 						$("#error_text_l1").show();
+						$("#response-wrong").slideDown(500);
+				        setTimeout(function(){
+		                    $("#response-wrong").slideUp(500);
+		                        
+		                    }, 2500);
 			        }
 
 			    });
@@ -804,12 +849,22 @@
 
 				    	$(".tab-content").not(tab).css("display", "none");
 				        $(tab).fadeIn();	
+
+				        $("#response-correct").slideDown(500);
+				        setTimeout(function(){
+		                    $("#response-correct").slideUp(500);
+		                        
+		                    }, 2500);
+					    	
 			    	}else{
+
 			    		$("#error_text_l2").show();
-			    	}
-
-
-			    	
+			    		$("#response-wrong").slideDown(500);
+				        setTimeout(function(){
+		                    $("#response-wrong").slideUp(500);
+		                        
+		                    }, 2500);
+					}
 			    });
 
 
@@ -864,8 +919,18 @@
 
 				    	$(".tab-content").not(tab).css("display", "none");
 				        $(tab).fadeIn();	
+				        $("#response-correct").slideDown(500);
+				        setTimeout(function(){
+		                    $("#response-correct").slideUp(500);
+		                        
+		                    }, 2500);
 			    	}else{
 			    		$("#error_text_l3").show();
+			    		$("#response-wrong").slideDown(500);
+				        setTimeout(function(){
+		                    $("#response-wrong").slideUp(500);
+		                        
+		                    }, 2500);
 			    	}
 
 
