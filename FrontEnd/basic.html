@@ -146,6 +146,14 @@
 		#response-bad, #response-good{
 			display: none;
 		}
+		.pics{
+			width: 90px;
+			padding: 10px;
+			margin: 10px;
+		}
+		.pics:hover{
+			box-shadow: 2px 2px 2px #ab0303;
+		}
 	</style>
 </head>
 <body>
@@ -295,9 +303,27 @@
 				        </div>
 
 				        <div id="tab-3" class="tab-content">
-				            <h2>Congratulations</h2>
-				            <h4>you have completed the basic level of the tutorials!</h4>
-				            <img src="img/congo.png">
+				            <hr>
+				            	<h3>Picture Selection Problem</h3>
+				            	<h5>Indentify the correct picture</h5>
+				            <hr>
+
+				            <!-- Question 1 -->
+				            <h4>1. Identify picture of a chicken</h4>
+				            <img src="img/p1.png" class="pics" id="img1">
+				            <img src="img/p2.png" class="pics" id="img2">
+				            <img src="img/p3.png" class="pics" id="img3">
+
+				            <!-- Question 2 -->
+				            <h4 style="margin-top: 20px;">2. Identify picture of a Tee-Shirt</h4>
+				            <img src="img/p4.png" class="pics" id="img4">
+				            <img src="img/p5.png" class="pics" id="img5">
+				            <img src="img/p6.png" class="pics" id="img6">
+
+				            <br><br>
+
+				            <button id="final_button" class="button">Submit</button>
+
 				        </div>
 				        
 				    </div>
@@ -332,7 +358,11 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript">
           $(document).ready(function() {
+
           	var count=10;
+          	var a[3];
+          	a[0]=a[1]=a[2]=0;
+
             $('#table').DataTable();  //Table name to put data table function
             $("#error_text1").hide();
      		$("#error_text2").hide();
@@ -396,6 +426,7 @@
                     }, 2000);
      		}else{
      			count=count-1;
+     			a[0]++;
      			$("#response-bad").slideDown(500);
 		        setTimeout(function(){
                     $("#response-bad").slideUp(500);
@@ -438,12 +469,36 @@
                     }, 2000);
      		}
      		else{
+     			a[1]++;
      			count=count-1;
      			$("#response-bad").slideDown(500);
 		        setTimeout(function(){
                     $("#response-bad").slideUp(500);
                         
                     }, 2500);
+     		}
+     	});
+     </script>
+     <script type="text/javascript">
+     	$(".pics").click(function(){
+     		$(this).css("border","1px solid #1e88e5");
+     		var id=$(this).attr("id");
+
+     		var choice1,choice2;
+
+     		if(id=="img1"){choice1=1;$("#img2").css("border","0");$("#img3").css("border","0");}
+     		else if(id=="img2"){choice1=2;$("#img1").css("border","0");$("#img3").css("border","0");}
+     		else if(id=="img3"){choice1=3;$("#img1").css("border","0");$("#img2").css("border","0");}
+
+     		if(id=="img4"){choice2=4;$("#img5").css("border","0");$("#img6").css("border","0");}
+     		else if(id=="img5"){choice2=5;$("#img4").css("border","0");$("#img6").css("border","0");}
+     		else if(id=="img6"){choice2=6;$("#img4").css("border","0");$("#img5").css("border","0");}
+
+     		if(choice1==1 && choice2==1){
+
+     		}else{
+     			count=count-1;
+     			a[2]++;
      		}
      	});
      </script>

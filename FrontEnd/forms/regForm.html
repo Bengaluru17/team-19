@@ -400,10 +400,17 @@
 		                				</td>
 		                			</tr>
 		                			<tr>
+		                				<td>State</td>
+		                				<td>:</td>
+		                				<td>
+		                					<input type="text" name="state" id="state_l3">
+		                				</td>
+		                			</tr>
+		                			<tr>
 		                				<td>Pin Code</td>
 		                				<td>:</td>
 		                				<td>
-		                					<input type="number" name="pin" id="number_l3">
+		                					<input type="number" name="pin" id="pin_l3">
 		                				</td>
 		                			</tr>
 		                			<tr>
@@ -900,10 +907,9 @@
 			    	}
 			    	if(age_val!=age){flag=0;$("#age_l3").addClass("error");}
 			    	if(gender!=gender){flag=0;}
+			    	
 			    	if(mobile_val!=mobile){flag=0;$("#mobile_l3").addClass("error");}
-			    	// alert(address);
-			    	// console.log(house+" "+street+" "+city+" "+state+" "+country+" "+pin);
-			    	// console.log(address);
+
 			    	if(house_no_l3!=(house))
 			    		{flag=0;$("#house_no_l3").addClass("error");}
 			    		 
@@ -912,7 +918,7 @@
 			    		{
 			    		 flag=0;$("#city_l3").addClass("error");
 			    		}
-			    		if(street_l3!=(city))
+			    		if(street_l3!=(street))
 			    		{
 			    		 flag=0;$("#street_l3").addClass("error");
 			    		}
@@ -925,11 +931,13 @@
 			    		{
 			    		 flag=0;$("#country_l3").addClass("error");
 			    		}
+			    		alert(pin+" "+pin_l3);
 			    		if(pin_l3!=(pin))
 			    		{
 			    		 flag=0;$("#pin_l3").addClass("error");
 			    		}
 
+			    		
 			    	if(flag==1){
 			    		var tab=$(this).attr("data-val");
 
