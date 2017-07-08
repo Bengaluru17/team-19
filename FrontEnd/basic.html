@@ -378,6 +378,16 @@
 		        $(tab).fadeIn();
 
 		        $("#response-good").slideDown(500);
+		        setTimeout(function(){
+                    $("#response-good").slideUp(500);
+                        
+                    }, 2000);
+     		}else{
+     			$("#response-bad").slideDown(500);
+		        setTimeout(function(){
+                    $("#response-bad").slideUp(500);
+                        
+                    }, 2500);
      		}
      	});
      	$("#level_two_button").click(function(){
@@ -408,11 +418,18 @@
 		    	$(".tab-content").not(tab).css("display", "none");
 		        $(tab).fadeIn();
 
-		        $("#response-good").slideDown(500);
+		        $("#response-good").slideDown(200);
 		        setTimeout(function(){
                     $("#response-good").slideUp(200);
                         
                     }, 2000);
+     		}
+     		else{
+     			$("#response-bad").slideDown(500);
+		        setTimeout(function(){
+                    $("#response-bad").slideUp(500);
+                        
+                    }, 2500);
      		}
      	});
      </script>
