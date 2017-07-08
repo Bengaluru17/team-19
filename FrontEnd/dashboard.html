@@ -77,28 +77,111 @@
 			border:1px solid #000;
 			border-radius: 10px;
 		}
+		.col-md-4{
+			padding: 0;
+		}
+		.side-bar{
+        	background: #fff;
+        	height: 80vh;
+        	padding: 10px;
+        	border-radius: 5px;
+        	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+        }
+        .side-bar ul{
+        	padding: 0;
+        	margin: 0;
+        }
+        .side-bar ul li{
+        	list-style: none;
+        	padding: 10px;
+        	font-size: 16px;
+        }
+        .side-bar ul li a{
+        	margin-left: 5px;
+        }
 	</style>
 	</style>
 </head>
 <body>
 
-	<h1 class="text-center">Team 19 Project</h1>
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="#">Team 19 Project</a>
+	    </div>
 
-	<hr>
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+	    	<ul class="nav navbar-nav navbar-right">
+		        <li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Options<span class="caret"></span></a>
+		          <ul class="dropdown-menu">
+		            <li><a href="#">Profile</a></li>
+		            <li><a href="#">Logout</a></li>
+		          </ul>
+		        </li>
+		      </ul>
+
+	      <ul class="nav navbar-nav navbar-right">
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Progress<span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="#">Gold 10</a></li>
+	            <li><a href="#">Silver 10</a></li>
+	            <li><a href="#">Bronze 10</a></li>
+	          </ul>
+	        </li>
+	      </ul>
+	      
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
 
 	<div class="wrapper">
 		<div class="row">
 			<div class="col-md-4">
 				<center>
 					<div id="domain">
-						<h2>Basic</h2>	 
+						<div class="row">
+							<div class="col-md-3">
+								<center>
+								<img src="img/1.png" style="width: 90px;padding: 10px;">
+								</center>
+							</div>
+							<div class="col-md-3">
+								<center>
+									<h2>Basic</h2>	 		
+								</center>
+							</div>
+						</div>
+						
 					</div>
 				</center>	
 			</div>
 			<div class="col-md-4">
 				<center>
 					<div id="domain">
-						<h2>Calculations</h2>	 
+						<div class="row">
+							<div class="col-md-3">
+								<center>
+								<img src="img/1.png" style="width: 90px;padding: 10px;">
+								</center>
+							</div>
+							<div class="col-md-3">
+								<center>
+									<h2>Calculations</h2>	 		
+								</center>
+							</div>
+						</div>
+						
 					</div>
 				</center>	
 			</div>
@@ -106,8 +189,20 @@
 				<center>
 					<a href="forms.html">
 					<div id="domain">
-						<h2>Form Filling</h2>	 
-					</div>	
+						<div class="row">
+							<div class="col-md-3">
+								<center>
+								<img src="img/1.png" style="width: 90px;padding: 10px;">
+								</center>
+							</div>
+							<div class="col-md-6">
+								<center>
+									<h2>Form Filling</h2>	 		
+								</center>
+							</div>
+						</div>
+						
+					</div>
 					</a>
 				</center>	
 			</div>
@@ -116,21 +211,57 @@
 			<div class="col-md-4">
 				<center>
 					<div id="domain">
-						<h2>Uploading</h2>	 
+						<div class="row">
+							<div class="col-md-3">
+								<center>
+								<img src="img/1.png" style="width: 90px;padding: 10px;">
+								</center>
+							</div>
+							<div class="col-md-6">
+								<center>
+									<h2>Uploading</h2>	 		
+								</center>
+							</div>
+						</div>
+						
 					</div>
 				</center>	
 			</div>
 			<div class="col-md-4">
 				<center>
 					<div id="domain">
-						<h2>Domain 2</h2>	 
+						<div class="row">
+							<div class="col-md-3">
+								<center>
+								<img src="img/1.png" style="width: 90px;padding: 10px;">
+								</center>
+							</div>
+							<div class="col-md-6">
+								<center>
+									<h2>Basic 1</h2>	 		
+								</center>
+							</div>
+						</div>
+						
 					</div>
 				</center>	
 			</div>
 			<div class="col-md-4">
 				<center>
 					<div id="domain">
-						<h2>Domain 2</h2>	 
+						<div class="row">
+							<div class="col-md-3">
+								<center>
+								<img src="img/1.png" style="width: 90px;padding: 10px;">
+								</center>
+							</div>
+							<div class="col-md-6">
+								<center>
+									<h2>Basic 2</h2>	 		
+								</center>
+							</div>
+						</div>
+						
 					</div>
 				</center>	
 			</div>
