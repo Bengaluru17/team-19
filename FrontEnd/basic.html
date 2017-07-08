@@ -4,11 +4,10 @@
 	<title>Project</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css">
+	<link rel="stylesheet" href="css/jquery-ui.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<style type="text/css">
-		<style type="text/css">
 		body{
-			background: #ab0303;
 		    background-repeat: no-repeat;
 		    background-position: center 0;
 		    background-size: cover;
@@ -32,13 +31,14 @@
 		    position: relative;
 		}
 		input{
-			background: transparent;
-			border:1px solid #000;
+			background: #efefef;
+			border:1px solid #efefef;
 			box-shadow: 0;
-			padding: 15px;
-			margin: 10px;
+			border-radius: 5px;
+			padding: 5px;
+			margin: 5px;
 			color: #000;
-			width: 100%;
+			
 		}
 		#button{
 			background: transparent;
@@ -48,20 +48,6 @@
 			margin: 10px;
 			color: #000;
 			width: 100%;
-		}
-		input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-		    color:    #000;
-		}
-		input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-		   color:    #000;
-		   opacity:  1;
-		}
-		input::-moz-placeholder { /* Mozilla Firefox 19+ */
-		   color:    #000;
-		   opacity:  1;
-		}
-		input:-ms-input-placeholder { /* Internet Explorer 10-11 */
-		   color:    #000;
 		}
 		a{
 			color: #000;
@@ -100,7 +86,7 @@
 		    line-height: 30px;
 		    float: left;
 		    margin-right: 10px;
-		    background-color: #ccc;
+		    background-color: #1e88e5;
 		    border-top: 1px solid #d4d4d1;
 		    border-right: 1px solid #d4d4d1;
 		    border-left: 1px solid #d4d4d1;
@@ -141,8 +127,25 @@
 		#tab-1 {
 		 display: block;   
 		}
-
-	</style>
+		td{
+			padding: 15px;
+		}
+		.button{
+			background: #1e88e5;
+			color: #fff;
+			padding: 5px 10px 5px 10px;
+			border-radius: 5px;
+			border: 0;
+		}
+		.error{
+			border: 1px solid #ab0303;
+		}
+		.error_text, #error_text2_l2, #error_text1_l2{
+			color: #ab0303;
+		}
+		#response-bad, #response-good{
+			display: none;
+		}
 	</style>
 </head>
 <body>
@@ -195,38 +198,117 @@
 		<hr>
 		<h2>Basic Tutorials</h2>
 		<hr>
-			<div id="tabs-container">
-			    <ul class="tabs-menu" style="width: 100%;">
-			        <li class="current"><a href="#tab-1">Level 1</a></li>
-			        <li><a href="#tab-2">Level 2</a></li>
-			        <li><a href="#tab-3">Level 3</a></li>
-			    </ul>
-			    <div class="tab">
-			        <div id="tab-1" class="tab-content">
-			        	<h5 class="text-center">Write the exact same word in the given box below</h5>
-			            <table>
-			            	<tbody>
-			            		<tr>
-			            			<td>
-			            				<strong>HELLO</strong>
-			            				<input type="text" name="t1_word" value="HELLO" id="t1_word">
-			            			</td>
-			            			<td>-></td>
-			            			<td>
-			            				<input type="text" name="t1" id="t1">
-			            			</td>
-			            		</tr>
-			            	</tbody>
-			            </table>
-			        </div>
-			        <div id="tab-2" class="tab-content">
-			            <h1>Level 2</h1>
-			        </div>
-			        <div id="tab-3" class="tab-content">
-			            <h1>Level 3</h1>
-			        </div>
-			    </div>
+
+		<div class="row">
+			<div class="col-md-6">
+				<div id="tabs-container">
+				    <ul class="tabs-menu" style="width: 100%;">
+				        <li class="current" id="l1"><a href="#tab-1">Level 1</a></li>
+				        <li id="2"><a href="#tab-2">Level 2</a></li>
+				        <li id="3"><a href="#tab-3">Level 3</a></li>
+				    </ul>
+				    <div class="tab">
+				        <div id="tab-1" class="tab-content">
+				        	<h5 class="text-center">Write the exact same word in the given box below</h5>
+				            <table>
+				            	<tbody>
+				            		<tr>
+				            			<td>
+				            				<strong>HELLO</strong>
+				            				<input type="text" name="t1_word" value="HELLO" id="t1_word" hidden>
+				            			</td>
+				            			<td>-></td>
+				            			<td>
+				            				<input type="text" name="t1" id="t1">
+				            				<span id="error_text1">Please Enter Valid Field!</span>
+				            			</td>
+				            		</tr>
+				            		<tr>
+				            			<td>
+				            				<strong>tree</strong>
+				            				<input type="text" name="t2_word" value="tree" id="t2_word" hidden>
+				            			</td>
+				            			<td>-></td>
+				            			<td>
+				            				<input type="text" name="t2" id="t2">
+				            				<span id="error_text2">Please Enter Valid Field!</span>
+				            			</td>
+				            		</tr>
+				            		<tr>
+				            			<td>
+				            				<strong>DJzkseYY</strong>
+				            				<input type="text" name="t3_word" value="DJzkseYY" id="t3_word" hidden>
+				            			</td>
+				            			<td>-></td>
+				            			<td>
+				            				<input type="text" name="t3" id="t3">
+				            				<span id="error_text3">Please Enter Valid Field!</span>
+				            			</td>
+				            		</tr>
+				            		<tr>
+				            			<td>
+				            				<button id="level_one_button" data-val="#tab-2" class="button">Next</button>
+				            			</td>
+				            		</tr>
+				            	</tbody>
+				            </table>
+				        </div>
+				        <div id="tab-2" class="tab-content">
+				            <!-- Date Picker and Validations -->
+				            <hr style="margin: 5px;">
+				            	<h4>Your Age = Current year - Your birth Year</h4>
+				            	<h5>Example :  ( 2017 - 1996 = 21 is  my age! )</h5>
+				            <hr style="margin: 5px;">
+				            <table>
+				            	<tbody>
+				            		<tr>
+				            			<td><label>2017 - 1996</label></td>
+				            			<td>=</td>
+				            			<td>
+				            				<input id="ans1" name="ans1" type="text">
+				            				<span id="error_text1_l2">Wrong Answer!</span>
+				            			</td>
+				            		</tr>
+				            		<tr>
+				            			<td><label>2010 - 1990</label></td>
+				            			<td>=</td>
+				            			<td>
+				            				<input id="ans2" name="ans2" type="text">
+				            				<span id="error_text2_l2">Wrong Answer!</span>
+				            			</td>
+				            		</tr>
+				            		<tr>
+				            			<td>
+				            				<button id="level_two_button" data-val="#tab-3" class="button">Next</button>
+				            			</td>
+				            		</tr>
+				            	</tbody>
+				            </table>
+				        </div>
+
+				        <div id="tab-3" class="tab-content">
+				            <h1>Level 3</h1>
+				        </div>
+				        
+				    </div>
+				</div>
 			</div>
+			<div class="col-md-5 pull-right">
+				<div id="response-good">
+					<center>
+						<img src="img/icon1.png" style="width: 200px;">
+						<h3>Yaayee! Correct Answer</h3>
+					</center>	
+				</div>
+				<div id="response-bad">
+					<center>
+						<img src="img/icon2.png" style="width: 200px;">
+						<h3>OOPS! Try Again</h3>
+					</center>	
+				</div>
+			</div>
+		</div>
+			
 	    
 	</div>
 
@@ -237,22 +319,119 @@
     <script src="js/d3.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/jquery.dataTables.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript">
           $(document).ready(function() {
             $('#table').DataTable();  //Table name to put data table function
+            $("#error_text1").hide();
+     		$("#error_text2").hide();
+     		$("#error_text3").hide();
+     		$("#error_text1_l2").hide();
+     		$("#error_text2_l2").hide();
+     	
           } );
+          $( function() {
+	        $( "#date1" ).datepicker({ dateFormat: 'dd-mm-yy' });
+	      } );
       </script>
      <script type="text/javascript">
-			$(document).ready(function() {
-			    $(".tabs-menu a").click(function(event) {
-			        event.preventDefault();
-			        $(this).parent().addClass("current");
-			        $(this).parent().siblings().removeClass("current");
-			        var tab = $(this).attr("href");
-			        $(".tab-content").not(tab).css("display", "none");
-			        $(tab).fadeIn();
-			    });
-			});
+     	$(document).ready(function(){
+            $("#t1").keypress(function(e) { 
+                var s = String.fromCharCode( e.which );
+
+                if((s.toUpperCase() === s && s.toLowerCase() !== s && !e.shiftKey) ||
+                   (s.toUpperCase() !== s && s.toLowerCase() === s && e.shiftKey)){
+                    if($('#capsalert').length < 1) $(this).after('<b id="capsalert"> CapsLock is on!</b>');
+                } else {
+                    if($('#capsalert').length > 0 ) $('#capsalert').remove();
+                }
+            });
+        });
+     </script>
+     <script type="text/javascript">
+     	$("#level_one_button").click(function(){
+
+     		$word1=$("#t1_word").val();
+     		$word2=$("#t2_word").val();
+     		$word3=$("#t3_word").val();
+
+     		var flag=1;
+
+     		$value1=$("#t1").val();
+     		$value2=$("#t2").val();
+     		$value3=$("#t3").val();
+
+     		if($value1!=$word1){flag=0;$("#t1").addClass("error");$("#error_text1").show();}
+     		else {$("#t1").removeClass("error");$("#error_text1").hide();}
+     		if($value2!=$word2){flag=0;$("#t2").addClass("error");$("#error_text2").show();}
+     		else {$("#t2").removeClass("error");$("#error_text2").hide();}
+     		if($value3!=$word3){flag=0;$("#t3").addClass("error");$("#error_text3").show();}
+     		else {$("#t3").removeClass("error");$("#error_text3").hide();}
+
+     		if(flag==1){
+     			var tab=$(this).attr("data-val");
+
+		    	$("#l1").removeClass("current");
+		    	$("#l2").addClass("current");
+
+		    	$(".tab-content").not(tab).css("display", "none");
+		        $(tab).fadeIn();
+
+		        $("#response-good").slideDown(500);
+		        setTimeout(function(){
+                    $("#response-good").slideUp(500);
+                        
+                    }, 2000);
+     		}else{
+     			$("#response-bad").slideDown(500);
+		        setTimeout(function(){
+                    $("#response-bad").slideUp(500);
+                        
+                    }, 2500);
+     		}
+     	});
+     	$("#level_two_button").click(function(){
+     		var flag=1;
+     		if($("#ans1").val()!=21){
+     			flag=0;
+     			$("#error_text1_l2").show();
+     			$("#ans1").addClass("error");
+     		}else{
+     			$("#error_text1_l2").hide();
+     			$("#ans1").removeClass("error");
+     		}
+     		if($("#ans2").val()!=20){
+     			flag=0;
+     			$("#error_text2_l2").show();
+     			$("#ans2").addClass("error");
+     		}else{
+				$("#error_text2_l2").hide();
+				$("#ans2").removeClass("error");
+     		}
+
+     		if(flag==1){
+     			var tab=$(this).attr("data-val");
+
+		    	$("#l2").removeClass("current");
+		    	$("#l3").addClass("current");
+
+		    	$(".tab-content").not(tab).css("display", "none");
+		        $(tab).fadeIn();
+
+		        $("#response-good").slideDown(200);
+		        setTimeout(function(){
+                    $("#response-good").slideUp(200);
+                        
+                    }, 2000);
+     		}
+     		else{
+     			$("#response-bad").slideDown(500);
+		        setTimeout(function(){
+                    $("#response-bad").slideUp(500);
+                        
+                    }, 2500);
+     		}
+     	});
      </script>
 </body>
 </html>

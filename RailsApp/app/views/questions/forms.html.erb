@@ -196,16 +196,16 @@
 			<div class="col-md-6">
 				<div id="tabs-container">
 			    <ul class="tabs-menu" style="width: 100%;">
-			        <li id="l1"><a href="#tab-1">Level 1</a></li>
+			        <li class="current" id="l1"><a href="#tab-1">Level 1</a></li>
 			        <li id="l2"><a href="#tab-2">Level 2</a></li>
 			        <li id="l3"><a href="#tab-3">Level 3</a></li>
 			        <li id="l4"><a href="#tab-4">Level 4</a></li>
-			        <li class="current" id="l5"><a href="#tab-5">Level 5</a></li>
+			        <li id="l5"><a href="#tab-5">Level 5</a></li>
 			    </ul>
 			    <div class="tab">
 			        <div id="tab-1" class="tab-content">
 
-			                <!-- <form> -->
+			                <form> 
 			                	<table>
 			                		<tbody>
 			                			<tr>
@@ -232,7 +232,7 @@
 			                			</tr>
 			                		</tbody>
 			                	</table>
-			                <!-- </form> -->
+			                </form>
 						           
 						</div>
 
@@ -462,58 +462,59 @@
 		                	</table>
 		                </form>
 			        </div>
+			        
 			        <div id="tab-5" class="tab-content">
-			        	<form>
+			        	<form action="questions/submit" method="post">
 		                	<table>
 		                		<tbody>
 		                			<tr>
 		                				<td>First Name</td>
 		                				<td>:</td>
 		                				<td>
-		                					<input type="text" name="first_name">
+		                					<input type="text" name="First Name">
 		                				</td>
 		                			</tr>
 		                			<tr>
 		                				<td>Last Name</td>
 		                				<td>:</td>
 		                				<td>
-		                					<input type="text" name="last_name">
+		                					<input type="text" name="Last Name">
 		                				</td>
 		                			</tr>
 		                			<tr>
 		                				<td>Age</td>
 		                				<td>:</td>
 		                				<td>
-		                					<input type="number" name="age">
+		                					<input type="number" name="Age">
 		                				</td>
 		                			</tr>
 		                			<tr>
 		                				<td>gender</td>
 		                				<td>:</td>
 		                				<td>
-		                					<input type="radio" name="gender">&nbsp;Male
-		                					&nbsp;&nbsp;<input type="radio" name="gender">&nbsp;Female
+		                					<input name="Gender" value="Male" type="radio"> Male <br/>
+		                					<input name="Gender" value="Female" type="radio"> Female <br/>
 		                				</td>
 		                			</tr>
 		                			<tr>
 		                				<td>Contact No.</td>
 		                				<td>:</td>
 		                				<td>
-		                					<input type="number" name="mobile">
+		                					<input type="number" name="Mobile">
 		                				</td>
 		                			</tr>
 		                			<tr>
 		                				<td>Address</td>
 		                				<td>:</td>
 		                				<td>
-		                					<input type="text" name="add">
+		                					<input type="text" name="Address">
 		                				</td>
 		                			</tr>
 		                			<tr>
 		                				<td>Email ID</td>
 		                				<td>:</td>
 		                				<td>
-		                					<input type="email" name="email">
+		                					<input type="email" name="Email">
 		                				</td>
 		                			</tr>
 		                			<tr>
@@ -532,17 +533,17 @@
 		                				<td>languages Known</td>
 		                				<td>:</td>
 		                				<td>
-		                					<input type="radio" name="lang">&nbsp;Hindi
-		                					&nbsp;&nbsp;<input type="radio" name="lang">&nbsp;English
-		                					&nbsp;&nbsp;<input type="radio" name="lang" id="other" onclick="show();">&nbsp;Other
-		                					<input type="text" name="other_lang" id="other_lang" placeholder="Please Specity" style="display: none;">
+		                					<input type="radio" name="Language">&nbsp;Hindi
+		                					&nbsp;&nbsp;<input type="radio" name="Language">&nbsp;English
+		                					&nbsp;&nbsp;<input type="radio" name="Language" id="other" onclick="show();">&nbsp;Other
+		                					<input type="text" name="Language" id="other_lang" placeholder="Please Specity" style="display: none;">
 		                				</td>
 		                			</tr>
 		                			<tr>
 		                				<td>Confirmation</td>
 		                				<td>:</td>
 		                				<td>
-		                					<input type="checkbox" name="confirm"> &nbsp; I agree to the terms and condition.
+		                					<input type="checkbox" name="Confirmation"> &nbsp; I agree to the terms and condition.
 		                				</td>
 		                			</tr>
 		                			<tr>
@@ -561,92 +562,15 @@
 				<h5><strong>Fill the answer from the given form</strong></h5>
 				<table>
 					<tbody>
+					<% @form.each do |f|%>
 						<tr>
-							<td>First Name</td>
+							<td><%= f.question %></td>
 							<td>:</td>
 							<td>
-								<label>Gaurav</label>
-								<input type="text" name="first_name" value="Gaurav" id="first_name" hidden>
+								<label><%= f.answer %></label>
 							</td>
 						</tr>
-						<tr>
-							<td>Last Name</td>
-							<td>:</td>
-							<td>
-								<label>Sharma</label>
-								<input type="text" name="last_name" value="Sharma" id="last_name" hidden>
-							</td>
-						</tr>
-						<tr>
-							<td>Age</td>
-							<td>:</td>
-							<td>
-								<label>21</label>
-								<input type="text" name="age" value="21" id="age" hidden>
-							</td>
-						</tr>
-						<tr>
-							<td>Gender</td>
-							<td>:</td>
-							<td>
-								<label>Male</label>
-								<input type="text" name="gender" value="male" id="gender" hidden>
-							</td>
-						</tr>
-						<tr>
-							<td>Contact No.</td>
-							<td>:</td>
-							<td>
-								<label>9087753739</label>
-								<input type="text" name="mobile" value="9087753739" id="mobile" hidden>
-							</td>
-						</tr>
-						<tr>
-							<td>Email ID</td>
-							<td>:</td>
-							<td>
-								<label>gaurav@gmail.com</label>
-								<input type="text" name="email" value="gauravsharma.mvp@gmail.com" id="email" hidden>
-							</td>
-						</tr>
-						<tr>
-							<td>House No.</td>
-							<td>:</td>
-							<td>
-								<label>335</label>
-								<input type="text" name="house" value="335" id="house" hidden>
-							</td>
-						</tr>
-						<tr>
-							<td>Street No.</td>
-							<td>:</td>
-							<td><label>4</label></td>
-						</tr>
-						<tr>
-							<td>City</td>
-							<td>:</td>
-							<td><label>Delhi</label></td>
-						</tr>
-						<tr>
-							<td>State</td>
-							<td>:</td>
-							<td><label>Delhi</label></td>
-						</tr>
-						<tr>
-							<td>Country</td>
-							<td>:</td>
-							<td><label>India</label></td>
-						</tr>
-						<tr>
-							<td>Pin Code</td>
-							<td>:</td>
-							<td><label>110053</label></td>
-						</tr>
-						<tr>
-							<td>Payment Option</td>
-							<td>:</td>
-							<td><label>Net Banking</label></td>
-						</tr>
+					<% end %>	
 					</tbody>
 				</table>
 			</div>

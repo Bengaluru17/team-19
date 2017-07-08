@@ -149,7 +149,7 @@
 		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #fff;" id="dropdown_options">Options<span class="caret"></span></a>
 		          <ul class="dropdown-menu">
 		            <li><a href="#">Profile</a></li>
-		            <li><a href="#">Logout</a></li>
+		            <li><%= link_to('Logout', destroy_student_session_path, :method => :delete) %></li>
 		          </ul>
 		        </li>
 
