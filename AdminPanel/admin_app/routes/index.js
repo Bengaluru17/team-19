@@ -29,7 +29,8 @@ query.on("end", function (result) {
 */
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	const results = [];
+	res.render('index1',function(req,res){
+		const results = [];
   // Get a Postgres client from the connection pool
   var client = new pg.Client({
 	user:"rnefboxmyfnhwa",
@@ -49,13 +50,23 @@ client.connect();
     // After all data is returned, close connection and return results
     query.on('end', () => {
       console.log(JSON.stringify(results.rows, null, "    "));
-      return res.json(results);
-
+      //return res.json(results);
+      if (!res.headersSent) {
+  if (typeof res.writeHead === 'function') res.writeHead(500, {'content-type': 'application/json'});
+}
+	  res.write(JSON.stringify(results, null, "    ") + "\n");
+	  res.end(); 
   //res.render('index1', { title: 'Express' });
-});
+		});
+	});
+	
 });
 
 router.get('/stats', function(req, res, next) {
   res.render('stats-bar1', { title: 'Express' });
+});
+
+router.get('/overall', function(req, res, next) {
+  res.render('overall', { title: 'Express' });
 });
 module.exports = router;
