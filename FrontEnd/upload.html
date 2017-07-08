@@ -86,7 +86,7 @@
 		    line-height: 30px;
 		    float: left;
 		    margin-right: 10px;
-		    background-color: #ccc;
+		    background-color: #1e88e5;
 		    border-top: 1px solid #d4d4d1;
 		    border-right: 1px solid #d4d4d1;
 		    border-left: 1px solid #d4d4d1;
@@ -192,9 +192,16 @@
 	</nav>
 
 	<div class="wrapper">
-		<hr>
-		<h2>Upload Tutorials</h2>
-		<hr>
+		<hr style="margin: 5px;">
+			<div class="row">
+				<div class="col-md-1">
+					<img src="img/upload.png" style="width:70px;">
+				</div>
+				<div class="col-md-6">
+					<h1>Upload Tutorials</h1>
+				</div>
+			</div>
+		<hr style="margin: 5px;margin-bottom: 30px;">
 
 		<div class="row">
 			 <div class="col-md-12">
@@ -212,9 +219,15 @@
 			    <div class="tab">
 			        <div id="tab-1" class="tab-content">
 			        	<h3>Upload Image</h3>
+			        	<hr>
+			        		<h4>Image are of many kinds mainly : JPG, PNG, BMP etc.</h4>
+			        		<img src="img/jpg.png" style="width:60px;margin-left: 10px;">
+			        		<img src="img/png.png" style="width:60px;margin-left: 20px;">
+			        		<img src="img/bmp.png" style="width:60px;margin-left: 20px;">
+			        	<hr>
 			        	<table>
 			        		<tr>
-			        			<td>Choose Image</td>
+			        			<td>Choose Image (JPG)</td>
 			        			<td>:</td>
 			        			<td>
 			        				<input type="file" name="img1" id="img1">
@@ -229,6 +242,8 @@
 			        </div>
 			        <div id="tab-2" class="tab-content">
 			            <h3>Upload Image and Adhar Card</h3>
+			            <img src="img/adhar.jpg" style="width: 70px; margin: 10px;">
+			            <img src="img/img.png" style="width: 70px; margin: 10px;">
 			            <table>
 			        		<tr>
 			        			<td>Choose Image</td>
@@ -252,7 +267,8 @@
 			        	</table>
 			        </div>
 			        <div id="tab-3" class="tab-content">
-			            <h3>Upload Image, Adhar Card and PAN Card</h3>
+			            <h3>Upload PDF Document File</h3>
+			            <img src="img/pdf.png" style="width: 70px;margin: 10px;">
 			            <table>
 			        		<tr>
 			        			<td>Choose Image</td>
@@ -269,7 +285,7 @@
 			        			</td>
 			        		</tr>
 			        		<tr>
-			        			<td>Choose Adhar Card</td>
+			        			<td>Choose PAN Card</td>
 			        			<td>:</td>
 			        			<td>
 			        				<input type="file" name="pan1" id="pan1">
