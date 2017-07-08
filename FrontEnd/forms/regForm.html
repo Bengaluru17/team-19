@@ -138,6 +138,9 @@
 			border-radius: 5px;
 			border: 0;
 		}
+		.error{
+			border: 1px solid #ab0303;
+		}
 	</style>
 	</style>
 </head>
@@ -212,8 +215,8 @@
 			                				<td>Name</td>
 			                				<td>:</td>
 			                				<td>
-			                					<input type="text" name="username">
-			                					
+			                					<input type="text" name="username" id="username_l1">
+
 			                					<a href="#" data-toggle="tooltip" data-placement="right" title="write both first name last name together" style="color: #1e88e5;">Hint!</a>
 			                				</td>
 			                			</tr>
@@ -221,12 +224,18 @@
 			                				<td>Age</td>
 			                				<td>:</td>
 			                				<td>
-			                					<input type="number" name="age">
+			                					<input type="number" name="age" id="age_l1">
 			                				</td>
 			                			</tr>
 			                			<tr>
 			                				<td>
-			                					<button id="level_one_button" data-val="#tab-2" class="button">Next</button>	
+			                					<button id="level_one_button" data-val="#tab-2" class="button">Next</button>
+			                				</td>
+			                				<td>
+			                					
+			                				</td>
+			                				<td>
+			                					<strong><span style="color: #ab0303;" id="error_text">Please Enter the correct details!</span></strong>	
 			                				</td>
 			                				
 			                			</tr>
@@ -246,43 +255,44 @@
 		                				<td>First Name</td>
 		                				<td>:</td>
 		                				<td>
-		                					<input type="text" name="first_name">
+		                					<input type="text" name="first_name" id="first_name_l2">
 		                				</td>
 		                			</tr>
 		                			<tr>
 		                				<td>Last Name</td>
 		                				<td>:</td>
 		                				<td>
-		                					<input type="text" name="last_name">
+		                					<input type="text" name="last_name" id="last_name_l2">
 		                				</td>
 		                			</tr>
 		                			<tr>
 		                				<td>Age</td>
 		                				<td>:</td>
 		                				<td>
-		                					<input type="number" name="age">
+		                					<input type="number" name="age" id="age_l2">
 		                				</td>
 		                			</tr>
 		                			<tr>
 		                				<td>gender</td>
 		                				<td>:</td>
 		                				<td>
-		                					<input type="radio" name="gender">&nbsp;Male
-		                					&nbsp;&nbsp;<input type="radio" name="gender">&nbsp;Female
+		                					<input type="radio" name="gender" value="Male" id="gender_male_l2">&nbsp;Male
+		                					&nbsp;&nbsp;
+		                					<input type="radio" name="gender" value="Female" id="gender_female_l2">&nbsp;Female
 		                				</td>
 		                			</tr>
 		                			<tr>
 		                				<td>Contact No.</td>
 		                				<td>:</td>
 		                				<td>
-		                					<input type="number" name="mobile">
+		                					<input type="number" name="mobile" id="mobile_l2">
 		                				</td>
 		                			</tr>
 		                			<tr>
 		                				<td>Address</td>
 		                				<td>:</td>
 		                				<td>
-		                					<input type="text" name="address">
+		                					<input type="text" name="address" id="address_l2">
 		                				</td>
 		                			</tr>
 		                			<tr>
@@ -620,32 +630,50 @@
 						<tr>
 							<td>Street No.</td>
 							<td>:</td>
-							<td><label>4</label></td>
+							<td>
+								<label>4</label>
+								<input type="text" name="street" value="4" id="street" hidden>
+							</td>
 						</tr>
 						<tr>
 							<td>City</td>
 							<td>:</td>
-							<td><label>Delhi</label></td>
+							<td>
+								<label>Delhi</label>
+								<input type="text" name="city" value="delhi" id="city" hidden>
+							</td>
 						</tr>
 						<tr>
 							<td>State</td>
 							<td>:</td>
-							<td><label>Delhi</label></td>
+							<td>
+								<label>Delhi</label>
+								<input type="text" name="state" value="delhi" id="state" hidden>
+							</td>
 						</tr>
 						<tr>
 							<td>Country</td>
 							<td>:</td>
-							<td><label>India</label></td>
+							<td>
+								<label>India</label>
+								<input type="text" name="country" value="India" id="country" hidden>
+							</td>
 						</tr>
 						<tr>
 							<td>Pin Code</td>
 							<td>:</td>
-							<td><label>110053</label></td>
+							<td>
+								<label>110053</label>
+								<input type="text" name="pin" value="110053" id="pin" hidden>
+							</td>
 						</tr>
 						<tr>
 							<td>Payment Option</td>
 							<td>:</td>
-							<td><label>Net Banking</label></td>
+							<td>
+								<label>Net Banking</label>
+								<input type="text" name="po" value="Net Banking" id="po" hidden>
+							</td>
 						</tr>
 					</tbody>
 				</table>
@@ -682,18 +710,74 @@
 			    //     $(tab).fadeIn();
 			    // });
 
+			    $("#error_text").hide();
+
+			    var first_name=$("#first_name").val();
+			    var last_name=$("#last_name").val();
+			    var age=$("#age").val();
+			    var gender=$("#gender").val();
+			    var mobile=$("#mobile").val();
+			    var email=$("#email").val();
+			    var house=$("#house").val();
+			    var street=$("#street").val();
+			    var city=$("#city").val();
+			    var state=$("#state").val();
+			    var country=$("#country").val();
+			    var pin=$("#pin").val();
+			    var po=$("#po").val();
+
+
+			    // validate form 1
 			    $("#level_one_button").click(function(event){
 			    	event.preventDefault();
-			    	var tab=$(this).attr("data-val");
+			    	
 
-			    	$("#l1").removeClass("current");
-			    	$("#l2").addClass("current");
+			        var username_val=$("#username_l1").val();
+			        var age_val=$("#age_l1").val();
+			        if(username_val==(first_name+" "+last_name)){
+			        	if(age_val==age){
+			        		var tab=$(this).attr("data-val");
 
-			    	$(".tab-content").not(tab).css("display", "none");
-			        $(tab).fadeIn();
+					    	$("#l1").removeClass("current");
+					    	$("#l2").addClass("current");
+
+					    	$(".tab-content").not(tab).css("display", "none");
+					        $(tab).fadeIn();
+			        	}else{
+			        		$("#age_l1").addClass("error");
+			        		$("#error_text").show();
+			        	}
+			        }else{
+						$("#username_l1").addClass("error");
+						$("#error_text").show();
+			        }
+
 			    });
+
+
+
 			    $("#level_two_button").click(function(event){
 			    	event.preventDefault();
+
+			    	var first_name_val=("#first_name_l2");
+			    	var last_name_val=("#last_name_l2");
+			    	var age_val=("#age_l2");
+			    	var first_name_val=("#first_name_l2");
+			    	var gender;
+			    	if($("#gender_male_l2").is(':checked')){
+			    		gender="Male";
+			    	}
+			    	else if($("#gender_female_l2").is(':checked')){
+			    		gender="Female";
+			    	}
+			    	var mobile_val=$("#mobile_l2").val();
+			    	var address=$("#address_l2").val();
+
+			    	if(first_name_val==first_name_l2){
+			    		
+			    	}
+
+
 			    	var tab=$(this).attr("data-val");
 
 			    	$("#l2").removeClass("current");
