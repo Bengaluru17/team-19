@@ -15,7 +15,6 @@
 
   </head>
   <body>
-  <p><%- result1.rows[0].id %></p>
     <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
@@ -29,43 +28,53 @@
 							#
 						</th>
 						<th>
-							Name of student
+							Student ID
 						</th>
 						<th>
-							Level
+							Group
 						</th>
 						<th>
 							Overall score
 						</th>
 						<th>
-							abc
+							Subgroup
+						</th>
+						<th>
+							Stats
 						</th>
 					</tr>
 				</thead>
 				<tbody>
+					<% result1.forEach(function(r1){%>
 					<tr class="success">
 						<td>
-							1
+							<%- r1.id %>
 						</td>
 						<td>
-							Nitin
+							<%- r1.student_id %>	
 						</td>
 						<td>
-							4
+							<%- r1.group %>
+						</td>
+						
+						<td>
+							<%- r1.score %>
+						</td>
+						
+						<td>
+							<%- r1.subgroup %>
 						</td>
 						<td>
-							40
-						</td>
-						<td>
-							<a href="stats">
-							Statistics
-							</a>
-						</td>
+							<button onclick="f1()">
+								Stats
+							</button>
 					</tr>
-					<tr>
+					<% }); %>
+						
+					<!--tr>
 						<td>
 							2
-						</td>
+						</td
 						<td>
 							John
 						</td>
@@ -137,7 +146,7 @@
 							Statistics
 							</a>
 						</td>
-					</tr>
+					</tr-->
 				</tbody>
 			</table>
 			<!--div class="jumbotron well">
@@ -152,10 +161,20 @@
 				</p>
 			</div-->
 		</div>
-		<a href="overall">Overall stats</a>
+		<a style="float:center;"href="overall">Overall stats</a>
 	</div>
 </div>
+<div id="st1" style="visibility:hidden">
+	<iframe height="250px" width="100%" scrolling="no" src="stats"></iframe>
+</div>
 
+<script>
+function f1(){
+		console.log("hey!");
+		var d=document.getElementById("st1");
+		d.style.visibility="visible";
+}
+</script>
 
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
