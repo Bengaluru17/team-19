@@ -20,11 +20,11 @@ default: &default
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  user: rnefboxmyfnhwa 
-  password: d4ad0a9d817f41fd48994b9af0c2ea0b28c817c22e477311cd21ccf23a3ab6d4
+  user: railsdev
+  password: password
 development:
   <<: *default
-  database: d47srlbsoj19eq
+  database: RailsApp_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -38,11 +38,11 @@ development:
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
   # domain sockets, so uncomment these lines.
-  host: ec2-54-235-181-120.compute-1.amazonaws.com
+  #host: localhost
 
   # The TCP port the server listens on. Defaults to 5432.
   # If your server runs on a different port number, change accordingly.
-  port: 5432
+  #port: 5432
 
   # Schema search path. The server defaults to $user,public
   #schema_search_path: myapp,sharedapp,public
