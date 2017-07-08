@@ -10,10 +10,9 @@ class QuestionsController < ApplicationController
 			puts f.answer
 			puts params[f.question.to_s]
 			puts @ctr
-			byebug
 			(@ctr += 1) if params[f.question.to_s] == f.answer.to_s
 		end
-		Score.create(:group => 1, :subgroup => 1, :score => @ctr, :student_id => 1)
+		Score.create(:group => 1, :subgroup => 1, :score => @ctr, :student_id => current_student.id)
 		redirect_to(root_path)
 	end
 end
