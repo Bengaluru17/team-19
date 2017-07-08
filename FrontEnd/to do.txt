@@ -1,0 +1,14 @@
+Types of forms:
+1. Registration Form
+2. Feedback Form
+3. Survey Form
+4. KYC
+5. Banking
+
+Registraiton Form:
+
+	1. Name, Age
+	2. First Name,Last Name, Age and Address, Mobile No. and Gender(Radio)
+	3. First Name,Last Name, Age and Address(Split -> House,Streetno. city, state, PinCode and COuntry), Mobile No. and Gender(Radio)
+	4. Name, Age, Gender(Radio), Payment Option(Check Box -> Cash, amstercard, Wallet, Paypal)
+	5. Name, Age(Gender), DOB (split -> Year, Month, Day), Lang. Known(checkbox -> Hindi, English, kannada and other(Textarea))
