@@ -5,6 +5,36 @@
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../css/jquery.dataTables.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<script type="text/javascript">
+                 function Captcha(){
+                     var alpha = new Array('1', '2', '3', '4', '5', '6', '7', '8', '9', '0','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z');
+                     var i;
+                     for (i=0;i<6;i++){
+                       var a = alpha[Math.floor(Math.random() * alpha.length)];
+                       var b = alpha[Math.floor(Math.random() * alpha.length)];
+                       var c = alpha[Math.floor(Math.random() * alpha.length)];
+                       var d = alpha[Math.floor(Math.random() * alpha.length)];
+                       var e = alpha[Math.floor(Math.random() * alpha.length)];
+                       var f = alpha[Math.floor(Math.random() * alpha.length)];
+                       var g = alpha[Math.floor(Math.random() * alpha.length)];
+                      }
+                    var code = a + ' ' + b + ' ' + ' ' + c + ' ' + d + ' ' + e + ' '+ f + ' ' + g;
+                    document.getElementById("mainCaptcha").value = code
+                  }
+                  function ValidCaptcha(){
+                      var string1 = removeSpaces(document.getElementById('mainCaptcha').value);
+                      var string2 = removeSpaces(document.getElementById('txtInput').value);
+                      if (string1 == string2){
+                        return true;
+                      }
+                      else{
+                        return false;
+                      }
+                  }
+                  function removeSpaces(string){
+                    return string.split(' ').join('');
+                  }
+	</script>
 	<style type="text/css">
 		<style type="text/css">
 		body{
@@ -32,7 +62,7 @@
 		    position: relative;
 		}
 		input{
-			background: #fff;
+			background: inherit;
 			border:1px solid #000;
 			box-shadow: 0;
 			padding: 15px;
@@ -203,7 +233,6 @@
 			    <div class="tab">
 			        <div id="tab-1" class="tab-content" style="border-collapse: 0px;">
 
-<<<<<<< HEAD
 			            <form class="well form-horizontal" style="width: 660px;" action=" " method="post" id="contact_form">
        
             <div class="form-group">
@@ -254,15 +283,89 @@
 				
 		</form>
 	</div>
-=======
-			        </div>
-
->>>>>>> 98778b2c0b0fa3d32cbb475da246687f10d02605
 			        <div id="tab-2" class="tab-content">
-			            <h1>Level 2</h1>
+			            <form class="well form-horizontal" style="width: 660px;" action=" " method="post" id="contact_form">
+				       		<div class="form-group">
+				                <label class="col-md-4 control-label">Name</label>
+				                <div class="col-md-4 inputGroupContainer">
+				                    <div class="input-group">
+				                        <input name="first_name" placeholder="Name" class="form-control" type="text">
+				                    </div>
+				                </div>
+				            </div>
+							<div class="form-group">
+				                <label class="col-md-4 control-label">Customer Type</label>
+				                	<div class="col-md-8">
+					                    <div class="radio-inline">
+					                        <label>
+					                            <input type="radio" name="public" value="public" /><span style="margin-left: -10px;">Public</span>
+					                        </label>
+					                    </div>
+					                    <div class="radio-inline">
+					                        <label>
+					                            <input type="radio" name="staff" value="staff" /> Staff
+					                        </label>
+	                    				</div>
+	                    				<div class="radio-inline">
+					                        <label>
+					                            <input type="radio" name="senior" value="senior" /> Senior Citizen
+					                        </label>
+	                    				</div>
+	                    				<div class="radio-inline">
+					                        <label>
+					                            <input type="radio" name="minor" value="minor" /> Minor
+					                        </label>
+	                    				</div>
+                					</div>
+            					</div>
+            					<div class="form-group">
+					                <label class="col-md-4 control-label">Gender</label>
+					                	<div class="col-md-6">
+						                    <div class="radio-inline">
+						                        <label>
+						                            <input type="radio" name="male" value="male" /><span style="margin-left: -10px;">Male</span>
+						                        </label>
+						                    </div>
+						                    <div class="radio-inline">
+						                        <label>
+						                            <input type="radio" name="female" value="female" /> Female
+						                        </label>
+						                    </div>
+						                    <div class="radio-inline">
+						                        <label>
+						                            <input type="radio" name="other" value="other" /> Other
+						                        </label>
+						                    </div>
+					                	</div>
+            					</div>
+								<div class="form-group">
+                				<label class="col-md-4 control-label">Marrital Status</label>
+                					<div class="col-md-4 inputGroupContainer">
+                    					<div class="input-group">
+                    						<select name="countryCode" id="" style="height: 30px; margin-left: 10px;">
+                    							<option value="yes" Selected>Yes</option>
+                            					<option value="no">No</option>
+                    						</select>
+                    					</div>
+                					</div>
+            					</div>
+            					<div class="form-group">
+                				<label class="col-md-4 control-label">Address</label>
+                					<div class="col-md-4 inputGroupContainer">
+                    					<div class="input-group">
+                        					<textarea class="form-control" style="margin-left: 10px;" name="address" placeholder="Address"></textarea>
+                    					</div>
+                					</div>
+                				</div>
+				                <div class="form-group">
+				                <label class="col-md-4 control-label"></label>
+				                <div class="col-md-4">
+				                    <button type="submit" class="btn btn-warning">Next <span class="glyphicon glyphicon-send"></span></button>
+				                </div>
+            				</div>
+					</form>
 			        </div>
 			        <div id="tab-3" class="tab-content">
-<<<<<<< HEAD
 			            <form class="well form-horizontal" style="width: 660px;" action=" " method="post" id="contact_form">
        
             <div class="form-group">
@@ -306,6 +409,7 @@
                     </select>
                     </div>
                 </div>
+            </div>
 				<hr>
 				<b>Enter Spouse Details :</b>
 				<div class="form-group">
@@ -345,7 +449,6 @@
                 <div class="col-md-4">
                     <button type="submit" class="btn btn-warning">Next <span class="glyphicon glyphicon-send"></span></button>
                 </div>
-            </div>
 		</form>
 	</div>
 </div>
@@ -408,7 +511,7 @@
                 <label class="col-md-4 control-label">Phone #</label>
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
-                        <input name="phone" placeholder="(845)555-1212" class="form-control" type="text">
+                        <input name="phone" placeholder="8455551212" class="form-control" type="text">
                     </div>
                 </div>
             </div>
@@ -419,7 +522,7 @@
                 <label class="col-md-4 control-label">Address</label>
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
-                        <input name="address" placeholder="Address" class="form-control" type="text">
+                        <textarea class="form-control" style="margin-left: 10px;" name="address" placeholder="Address"></textarea>
                     </div>
                 </div>
             </div>
@@ -705,7 +808,7 @@
                 <label class="col-md-4 control-label">Enter Captcha</label>
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
-                        <input type="text" id="mainCaptcha" />
+                        <input type="text" style="background:#fff;" id="mainCaptcha" />
                     </div>
                 </div>
                 <div class="col-md-4 inputGroupContainer">
@@ -1123,15 +1226,6 @@
 	</form-->
 </div>
 
-=======
-			            <h1>Level 3</h1>
-			        </div>
-			        <div id="tab-4" class="tab-content">
-			            <h1>Level 4</h1>
-			        </div>
-			        <div id="tab-5" class="tab-content">
-			            <h1>Level 5</h1>
->>>>>>> 98778b2c0b0fa3d32cbb475da246687f10d02605
 			        </div>
 			    </div>
 			</div>
