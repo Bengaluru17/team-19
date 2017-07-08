@@ -15,6 +15,9 @@
 		    background-attachment: fixed;
 		    font-family: 'Raleway', sans-serif;
 		}
+		navbar-default{
+			background: #64b5f6 ;
+		}
 		.wrapper{
 			width: 90%;
 			margin:auto;
@@ -73,7 +76,7 @@
 			text-decoration: none;
 		}
 		#logo{
-			width:150px;
+			width:120px;
 		}
 		.forms{
 			width: 90%;
@@ -82,11 +85,15 @@
 		}
 		.forms:hover{
 			/*border:1px solid #000;*/
-			box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+			box-shadow: 1px 1px 2px 1px #0d47a1;
 		}
 		hr{
 			margin-top: 40px;
 			margin-bottom: 20px;
+		}
+		#dropdown_options:focus{
+			background: #0d47a1;
+			border-radius: 10px;
 		}
 	</style>
 	</style>
@@ -94,7 +101,7 @@
 <body>
 
 
-	<nav class="navbar navbar-default">
+	<nav class="navbar navbar-default" style="background: #1e88e5; border:0;border-radius: 0;">
 	  <div class="container-fluid">
 	    <!-- Brand and toggle get grouped for better mobile display -->
 	    <div class="navbar-header">
@@ -104,95 +111,98 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="#">Team 19 Project</a>
+	      <a class="navbar-brand" href="#" style="color: #fff;">Team 19 Project</a>
 	    </div>
 
-	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
+
 	    	<ul class="nav navbar-nav navbar-right">
-		        <li class="dropdown">
-		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Options<span class="caret"></span></a>
+
+	    		<li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #fff;" id="dropdown_options">Progress<span class="caret"></span></a>
+		          <ul class="dropdown-menu">
+		            <li><a href="#">Gold 10</a></li>
+		            <li><a href="#">Silver 10</a></li>
+		            <li><a href="#">Bronze 10</a></li>
+		          </ul>
+		        </li>
+
+		        
+	    		<li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #fff;" id="dropdown_options">Options<span class="caret"></span></a>
 		          <ul class="dropdown-menu">
 		            <li><a href="#">Profile</a></li>
 		            <li><a href="#">Logout</a></li>
 		          </ul>
 		        </li>
+
+		        
 		      </ul>
 
-	      <ul class="nav navbar-nav navbar-right">
-	        <li class="dropdown">
-	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Progress<span class="caret"></span></a>
-	          <ul class="dropdown-menu">
-	            <li><a href="#">Gold 10</a></li>
-	            <li><a href="#">Silver 10</a></li>
-	            <li><a href="#">Bronze 10</a></li>
-	          </ul>
-	        </li>
-	      </ul>
-	      
 	    </div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
 	</nav>
 
 	<div class="wrapper">
 		<hr>
+			<h3 class="text-center" style="margin: 10px;padding: 0;">Form Tutorials</h3>
+		<hr style="margin: 20px;padding: 0;">
 		<div class="row">
-			<div class="col-md-3">
+			<div class="col-md-2">
 				<div class="forms">
 					<center>
 						<a href="forms/regForm.html">
 							<img src="img/1.png" id="logo">
-							<h4>Registration Form</h4>	
+							<h5>Registration Form <br> Tutorials</h5>	
 						</a>
 					</center>		
 				</div>
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-2">
 				<div class="forms">
 					<center>
 						<a href="forms/feedback.html">
 							<img src="img/1.png" id="logo">
-							<h4>Feedback Form</h4>
+							<h5>Feedback Form <br> Tutorials</h5>
 						</a>
 					</center>	
 				</div>
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-2">
 				<div class="forms">
 					<center>
 						<a href="forms/banking.html">
 							<img src="img/1.png" id="logo">
-							<h4>Banking Form</h4>
+							<h5>Banking Form <br> Tutorials</h5>
 						</a>
 					</center>	
 				</div>
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-2">
 				<div class="forms">
 					<center>
 						<a href="forms/account.html">
 							<img src="img/1.png" id="logo">
-							<h4>Account Registration Forms</h4>	
+							<h5>Account Registration Forms <br> tutorials</h5>	
 						</a>
 					</center>	
 				</div>
 			</div>
-		</div>
-		<hr>
-		<div class="row">
-			<div class="col-md-3">
+			<div class="col-md-2">
 				<div class="forms">
 					<center>
 						<a href="forms/irctc.html">
 							<img src="img/1.png" id="logo">
-							<h4>IRCTC Form</h4>
+							<h5>IRCTC Form <br> tutorials</h5>
 						</a>
 					</center>	
 				</div>
 			</div>
-			
 		</div>
+
+		
 	</div>
 
 
