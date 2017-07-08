@@ -3,7 +3,8 @@ class CreateScores < ActiveRecord::Migration[5.0]
     create_table :scores do |t|
       t.references :student, foreign_key: true
       t.integer :group
-      t.integerscore :subgroup
+      t.integer :score
+      t.integer :subgroup
 
       t.timestamps
     end
