@@ -3,6 +3,10 @@ Rails.application.configure do
 
   # Code is not reloaded between requests.
   config.cache_classes = true
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 8ca00b0... static files in production
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
