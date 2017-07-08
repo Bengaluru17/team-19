@@ -13,7 +13,7 @@
 		    background-position: center 0;
 		    background-size: cover;
 		    background-attachment: fixed;
-		    font-family: 'Raleway', sans-serif;
+		    font-family: 'Roboto', sans-serif;
 		}
 		.wrapper{
 			width: 90%;
@@ -86,20 +86,14 @@
 			margin-top: 40px;
 			margin-bottom: 20px;
 		}
-
-		body {
-		padding: 20px;
-		font-family: Arial, Helvetica, sans-serif;
-		line-height: 1.5;
-		font-size: 14px;        
-		}
-
 		.tabs-menu {
 		    height: 30px;
 		    float: left;
 		    clear: both;
 		}
-
+		.tabs-menu ul{
+			width: 100%;
+		}
 		.tabs-menu li {
 			list-style: none;
 		    height: 30px;
@@ -153,13 +147,57 @@
 </head>
 <body>
 
+	<nav class="navbar navbar-default" style="background: #1e88e5; border:0;border-radius: 0;">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="#" style="color: #fff;">Team 19 Project</a>
+	    </div>
+
+	    
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+	    	<ul class="nav navbar-nav navbar-right">
+
+	    		<li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #fff;" id="dropdown_options">Progress<span class="caret"></span></a>
+		          <ul class="dropdown-menu">
+		            <li><a href="#">Gold 10</a></li>
+		            <li><a href="#">Silver 10</a></li>
+		            <li><a href="#">Bronze 10</a></li>
+		          </ul>
+		        </li>
+
+		        
+	    		<li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #fff;" id="dropdown_options">Options<span class="caret"></span></a>
+		          <ul class="dropdown-menu">
+		            <li><a href="#">Profile</a></li>
+		            <li><a href="#">Logout</a></li>
+		          </ul>
+		        </li>
+
+		        
+		      </ul>
+
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+
 	<div class="wrapper">
 		<hr>
 			<h1>Registration Forms Tutorials</h1>
 		<hr>
 		
 			<div id="tabs-container">
-			    <ul class="tabs-menu">
+			    <ul class="tabs-menu" style="width: 100%;">
 			        <li class="current"><a href="#tab-1">Level 1</a></li>
 			        <li><a href="#tab-2">Level 2</a></li>
 			        <li><a href="#tab-3">Level 3</a></li>
@@ -168,7 +206,32 @@
 			    </ul>
 			    <div class="tab">
 			        <div id="tab-1" class="tab-content">
-			            <h1>Level 1</h1>
+
+			                <form class="form-horizontal" method="post">
+			                    <input type='hidden' name='csrfmiddlewaretoken' value='XFe2rTYl9WOpV8U6X5CfbIuOZOELJ97S' />
+			                    <div id="div_id_username" class="form-group required">
+			                        <label for="id_username" class="control-label col-md-4  requiredField">Name<span class="asteriskField">*</span> </label>
+			                        <div class="controls col-md-8 ">
+			                            <input class="input-md  textinput textInput form-control" id="id_username" maxlength="30" name="username" placeholder="Choose your username" style="margin-bottom: 10px" type="text" />
+			                        </div>
+			                    </div>
+			                    <div id="div_id_name" class="form-group required">
+			                        <label for="id_name" class="control-label col-md-4  requiredField">Age<span class="asteriskField">*</span> </label>
+			                        <div class="controls col-md-8 ">
+			                            <input class="input-md textinput textInput form-control" id="id_name" name="name" placeholder="Your Frist name and Last name" style="margin-bottom: 10px" type="number" />
+			                        </div>
+			                    </div>
+			                    <div class="form-group">
+			                        <div class="aab controls col-md-4 "></div>
+			                        <div class="controls col-md-8 ">
+			                            <input type="submit" name="Signup" value="Submit" class="btn btn-primary btn btn-info" id="submit-id-signup" />
+			                        </div>
+			                    </div>
+
+			                </form>
+						           
+						</div>
+
 			        </div>
 			        <div id="tab-2" class="tab-content">
 			            <h1>Level 2</h1>
@@ -179,7 +242,7 @@
 			        <div id="tab-4" class="tab-content">
 			            <h1>Level 4</h1>
 			        </div>
-			        <div id="tab-5" class="tab-content">
+			        <div id="tab-4" class="tab-content">
 			            <h1>Level 5</h1>
 			        </div>
 			    </div>
