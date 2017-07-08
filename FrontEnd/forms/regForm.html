@@ -235,7 +235,7 @@
 			                					
 			                				</td>
 			                				<td>
-			                					<strong><span style="color: #ab0303;" id="error_text">Please Enter the correct details!</span></strong>	
+			                					<strong><span style="color: #ab0303;" id="error_text_l1">Please Enter the correct details!</span></strong>	
 			                				</td>
 			                				
 			                			</tr>
@@ -299,7 +299,12 @@
 		                				<td>
 		                					<button id="level_two_button" data-val="#tab-3" class="button">Next</button>	
 		                				</td>
-		                				
+		                				<td>
+			                					
+		                				</td>
+		                				<td>
+		                					<strong><span style="color: #ab0303;" id="error_text_l2">Please Enter the correct details!</span></strong>	
+		                				</td>
 		                			</tr>
 		                		</tbody>
 		                	</table>
@@ -315,71 +320,71 @@
 		                				<td>First Name</td>
 		                				<td>:</td>
 		                				<td>
-		                					<input type="text" name="first_name">
+		                					<input type="text" name="first_name" id="first_name_l3">
 		                				</td>
 		                			</tr>
 		                			<tr>
 		                				<td>Last Name</td>
 		                				<td>:</td>
 		                				<td>
-		                					<input type="text" name="last_name">
+		                					<input type="text" name="last_name" id="last_name_l3">
 		                				</td>
 		                			</tr>
 		                			<tr>
 		                				<td>Age</td>
 		                				<td>:</td>
 		                				<td>
-		                					<input type="number" name="age">
+		                					<input type="number" name="age" id="age_l3">
 		                				</td>
 		                			</tr>
 		                			<tr>
 		                				<td>gender</td>
 		                				<td>:</td>
 		                				<td>
-		                					<input type="radio" name="gender">&nbsp;Male
-		                					&nbsp;&nbsp;<input type="radio" name="gender">&nbsp;Female
+		                					<input type="radio" name="gender" id="gender_male_l3">&nbsp;Male 
+		                					&nbsp;&nbsp;<input type="radio" name="gender" id="gender_female_l3">&nbsp;Female
 		                				</td>
 		                			</tr>
 		                			<tr>
 		                				<td>Contact No.</td>
 		                				<td>:</td>
 		                				<td>
-		                					<input type="number" name="mobile">
+		                					<input type="number" name="mobile" id="mobile_l3">
 		                				</td>
 		                			</tr>
 		                			<tr>
 		                				<td>House No.</td>
 		                				<td>:</td>
 		                				<td>
-		                					<input type="text" name="house_no">
+		                					<input type="text" name="house_no" id="house_no_l3">
 		                				</td>
 		                			</tr>
 		                			<tr>
 		                				<td>Street No.</td>
 		                				<td>:</td>
 		                				<td>
-		                					<input type="text" name="street_no">
+		                					<input type="text" name="street_no" id="street_no_l3">
 		                				</td>
 		                			</tr>
 		                			<tr>
 		                				<td>City</td>
 		                				<td>:</td>
 		                				<td>
-		                					<input type="text" name="city">
+		                					<input type="text" name="city" id="city_l3">
 		                				</td>
 		                			</tr>
 		                			<tr>
 		                				<td>Pin Code</td>
 		                				<td>:</td>
 		                				<td>
-		                					<input type="number" name="pin">
+		                					<input type="number" name="pin" id="number_l3">
 		                				</td>
 		                			</tr>
 		                			<tr>
 		                				<td>Country</td>
 		                				<td>:</td>
 		                				<td>
-		                					<input type="text" name="country">
+		                					<input type="text" name="country" id="country_l3">
 		                				</td>
 		                			</tr>
 		                			<tr>
@@ -466,7 +471,12 @@
 		                				<td>
 		                					<button id="level_four_button" class="button" data-val="#tab-5">Next</button>	
 		                				</td>
-		                				
+		                				<td>
+			                					
+		                				</td>
+		                				<td>
+		                					<strong><span style="color: #ab0303;" id="error_text_l3">Please Enter the correct details!</span></strong>	
+		                				</td>
 		                			</tr>
 		                		</tbody>
 		                	</table>
@@ -710,7 +720,8 @@
 			    //     $(tab).fadeIn();
 			    // });
 
-			    $("#error_text").hide();
+			    $("#error_text_l1").hide();
+			    $("#error_text_l2").hide();
 
 			    var first_name=$("#first_name").val();
 			    var last_name=$("#last_name").val();
@@ -745,11 +756,11 @@
 					        $(tab).fadeIn();
 			        	}else{
 			        		$("#age_l1").addClass("error");
-			        		$("#error_text").show();
+			        		$("#error_text_l1").show();
 			        	}
 			        }else{
 						$("#username_l1").addClass("error");
-						$("#error_text").show();
+						$("#error_text_l1").show();
 			        }
 
 			    });
@@ -759,10 +770,10 @@
 			    $("#level_two_button").click(function(event){
 			    	event.preventDefault();
 
-			    	var first_name_val=("#first_name_l2");
-			    	var last_name_val=("#last_name_l2");
-			    	var age_val=("#age_l2");
-			    	var first_name_val=("#first_name_l2");
+			    	var first_name_val=$("#first_name_l2").val();
+			    	var last_name_val=$("#last_name_l2").val();
+			    	var age_val=$("#age_l2").val();
+			    	// var first_name_val=$("#first_name_l2").val();
 			    	var gender;
 			    	if($("#gender_male_l2").is(':checked')){
 			    		gender="Male";
@@ -773,21 +784,41 @@
 			    	var mobile_val=$("#mobile_l2").val();
 			    	var address=$("#address_l2").val();
 
-			    	if(first_name_val==first_name_l2){
-			    		
+			    	var flag=1;
+
+			    	if(first_name_val!=first_name && last_name_val!=last_name){
+			    		flag=0;
+			    		$("#first_name_l2").addClass("error");
+			    		$("#last_name_l2").addClass("error");
+			    	}
+			    	if(age_val!=age){flag=0;$("#age_l2").addClass("error");}
+			    	if(gender!=gender){flag=0;}
+			    	if(mobile_val!=mobile){flag=0;$("#mobile_l2").addClass("error");}
+			    	// alert(address);
+			    	alert(house+" "+street+" "+city+" "+state+" "+country+" "+pin);
+			    	if(address!=(house+" "+street+" "+city+" "+state+" "+country+" "+pin)){flag=0;$("#address_l2").addClass("error");}
+
+			    	if(flag==1){
+			    		var tab=$(this).attr("data-val");
+
+				    	$("#l2").removeClass("current");
+				    	$("#l3").addClass("current");
+
+				    	$(".tab-content").not(tab).css("display", "none");
+				        $(tab).fadeIn();	
+			    	}else{
+			    		$("#error_text_l2").show();
 			    	}
 
 
-			    	var tab=$(this).attr("data-val");
-
-			    	$("#l2").removeClass("current");
-			    	$("#l3").addClass("current");
-
-			    	$(".tab-content").not(tab).css("display", "none");
-			        $(tab).fadeIn();
+			    	
 			    });
+
+
 			    $("#level_three_button").click(function(event){
 			    	event.preventDefault();
+
+
 			    	var tab=$(this).attr("data-val");
 
 			    	$("#l3").removeClass("current");
@@ -795,6 +826,51 @@
 
 			    	$(".tab-content").not(tab).css("display", "none");
 			        $(tab).fadeIn();
+
+
+
+
+			        var first_name_val=$("#first_name_l3").val();
+			    	var last_name_val=$("#last_name_l3").val();
+			    	var age_val=$("#age_l3").val();
+			    	// var first_name_val=$("#first_name_l3").val();
+			    	var gender;
+			    	if($("#gender_male_l3").is(':checked')){
+			    		gender="Male";
+			    	}
+			    	else if($("#gender_female_l3").is(':checked')){
+			    		gender="Female";
+			    	}
+			    	var mobile_val=$("#mobile_l3").val();
+			    	var address=$("#address_l3").val();
+
+			    	var flag=1;
+
+			    	if(first_name_val!=first_name && last_name_val!=last_name){
+			    		flag=0;
+			    		$("#first_name_l3").addClass("error");
+			    		$("#last_name_l3").addClass("error");
+			    	}
+			    	if(age_val!=age){flag=0;$("#age_l3").addClass("error");}
+			    	if(gender!=gender){flag=0;}
+			    	if(mobile_val!=mobile){flag=0;$("#mobile_l3").addClass("error");}
+			    	// alert(address);
+			    	alert(house+" "+street+" "+city+" "+state+" "+country+" "+pin);
+			    	if(address!=(house+" "+street+" "+city+" "+state+" "+country+" "+pin)){flag=0;$("#address_l3").addClass("error");}
+
+			    	if(flag==1){
+			    		var tab=$(this).attr("data-val");
+
+				    	$("#l2").removeClass("current");
+				    	$("#l3").addClass("current");
+
+				    	$(".tab-content").not(tab).css("display", "none");
+				        $(tab).fadeIn();	
+			    	}else{
+			    		$("#error_text_l3").show();
+			    	}
+
+
 			    });
 			    $("#level_four_button").click(function(event){
 			    	event.preventDefault();
