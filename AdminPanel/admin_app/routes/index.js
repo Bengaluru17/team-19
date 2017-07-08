@@ -8,7 +8,7 @@ const path = require('path');
 /* GET home page. */
 
 
-router.get('/', function(req, res) {
+router.get('/main', function(req, res) {
 	var result;
 
 var client = new pg.Client({
@@ -40,6 +40,10 @@ query.on("end", function (result) {
 	//console.log(result.rows);
 	
 	});
+
+router.get('/', function(req, res, next) {
+  res.render('login', { title: 'Express' });
+});
 
 router.get('/stats', function(req, res, next) {
   res.render('stats-bar1', { title: 'Express' });
