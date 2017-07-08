@@ -193,8 +193,16 @@
 
 	<div class="wrapper">
 		<hr>
-		<h2>Basic Tutorials</h2>
+		<h2>Upload Tutorials</h2>
 		<hr>
+
+		<div class="row">
+			 <div class="col-md-12">
+			 	
+			 </div>
+		</div>
+
+
 			<div id="tabs-container">
 			    <ul class="tabs-menu" style="width: 100%;">
 			        <li class="current" id="l1"><a href="#tab-1">Level 1</a></li>
@@ -203,13 +211,76 @@
 			    </ul>
 			    <div class="tab">
 			        <div id="tab-1" class="tab-content">
-			        	
+			        	<h3>Upload Image</h3>
+			        	<table>
+			        		<tr>
+			        			<td>Choose Image</td>
+			        			<td>:</td>
+			        			<td>
+			        				<input type="file" name="img1" id="img1">
+			        			</td>
+			        		</tr>
+			        		<tr>
+			        			<td>
+			        				<button id="level_one_button" data-val="#tab-2" class="button">Next</button>
+			        			</td>
+			        		</tr>
+			        	</table>
 			        </div>
 			        <div id="tab-2" class="tab-content">
-			            
+			            <h3>Upload Image and Adhar Card</h3>
+			            <table>
+			        		<tr>
+			        			<td>Choose Image</td>
+			        			<td>:</td>
+			        			<td>
+			        				<input type="file" name="img2" id="img2">
+			        			</td>
+			        		</tr>
+			        		<tr>
+			        			<td>Choose Adhar Card</td>
+			        			<td>:</td>
+			        			<td>
+			        				<input type="file" name="adhar1" id="adhar1">
+			        			</td>
+			        		</tr>
+			        		<tr>
+			        			<td>
+			        				<button id="level_two_button" data-val="#tab-3" class="button">Next</button>
+			        			</td>
+			        		</tr>
+			        	</table>
 			        </div>
 			        <div id="tab-3" class="tab-content">
-			            
+			            <h3>Upload Image, Adhar Card and PAN Card</h3>
+			            <table>
+			        		<tr>
+			        			<td>Choose Image</td>
+			        			<td>:</td>
+			        			<td>
+			        				<input type="file" name="img3" id="img3">
+			        			</td>
+			        		</tr>
+			        		<tr>
+			        			<td>Choose Adhar Card</td>
+			        			<td>:</td>
+			        			<td>
+			        				<input type="file" name="adhar2" id="adhar2">
+			        			</td>
+			        		</tr>
+			        		<tr>
+			        			<td>Choose Adhar Card</td>
+			        			<td>:</td>
+			        			<td>
+			        				<input type="file" name="pan1" id="pan1">
+			        			</td>
+			        		</tr>
+			        		<tr>
+			        			<td>
+			        				<button id="level_three_button" class="button">Finish</button>
+			        			</td>
+			        		</tr>
+			        	</table>
 			        </div>
 			        
 			    </div>
@@ -223,5 +294,17 @@
     <script src="js/bootstrap.js"></script>
     <script src="js/d3.js"></script>
     <script src="js/custom.js"></script>
+    <script type="text/javascript">
+			$(document).ready(function() {
+			    $(".tabs-menu a").click(function(event) {
+			        event.preventDefault();
+			        $(this).parent().addClass("current");
+			        $(this).parent().siblings().removeClass("current");
+			        var tab = $(this).attr("href");
+			        $(".tab-content").not(tab).css("display", "none");
+			        $(tab).fadeIn();
+			    });
+			});
+     </script>
 </body>
 </html>
