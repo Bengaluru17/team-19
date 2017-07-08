@@ -27,7 +27,7 @@ client.connect();
 
 
 
-var query = client.query("SELECT * FROM scores");
+var query = client.query("SELECT * FROM students");
 query.on("row", function(row,result) {
     result.addRow(row);
 });
