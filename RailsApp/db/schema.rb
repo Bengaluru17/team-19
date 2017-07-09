@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20170708223658) do
     t.integer  "group"
     t.integer  "subgroup"
     t.integer  "mistakes",     default: [],              array: true
-    t.integer  "student_name"
+    t.string  "student_name"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
     t.index ["students_id"], name: "index_answers_on_students_id", using: :btree
