@@ -348,6 +348,10 @@
 	    
 	</div>
 
+	<form id="form" acction="Submit">
+		<input type="text" name="submit" id="submit">
+	</form>
+
 
 	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 	<!-- <script src="js/jquery-3.2.1.js"></script>  *****FOR NO CONNECTION****** -->
@@ -495,7 +499,8 @@
      		else if(id=="img6"){choice2=6;$("#img4").css("border","0");$("#img5").css("border","0");}
 
      		if(choice1==1 && choice2==1){
-     			window.location.href="congo.html";
+     			// window.location.href="congo.html";
+     			$("#submit").val(a[0]+" "+a[1]+" "+a[2]);
      		}else{
      			count=count-1;
      			a[2]++;
