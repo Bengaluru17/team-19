@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170708223658) do
+ActiveRecord::Schema.define(version: 20170708223529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20170708223658) do
     t.integer  "group"
     t.integer  "subgroup"
     t.integer  "mistakes",     default: [],              array: true
-    t.string  "student_name"
+    t.integer  "student_name"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
     t.index ["students_id"], name: "index_answers_on_students_id", using: :btree
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20170708223658) do
   end
 
   create_table "students", force: :cascade do |t|
-    t.string   "username",                  default: "", null: false
+    t.string   "username",                            null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(version: 20170708223658) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "username"
     t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true, using: :btree
     t.index ["username"], name: "index_students_on_username", unique: true, using: :btree
   end

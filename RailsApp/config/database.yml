@@ -24,7 +24,11 @@ default: &default
   password: password
 development:
   <<: *default
-  database: RailsApp_development
+  database: d2de65l6fkntou
+  user: ylvyrtycszshqx
+  host: ec2-54-225-182-108.compute-1.amazonaws.com
+  port: 5432
+  password: d835faa696e7d370a74def7c74c01f3f02a8b317b70a8e23e1aac616fc53ec06
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.

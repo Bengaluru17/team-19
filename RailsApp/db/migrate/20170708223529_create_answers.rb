@@ -5,7 +5,7 @@ class CreateAnswers < ActiveRecord::Migration[5.0]
       t.integer :group
       t.integer :subgroup
       t.integer :mistakes, array: true,default: []
-      t.integer :student_name
+      t.string :student_name
       t.timestamps
     end
   end
