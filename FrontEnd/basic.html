@@ -322,7 +322,7 @@
 
 				            <br><br>
 
-				            <a href="congo.html"><button id="final_button" class="button">Submit</button></a>
+				            <button id="final_button" class="button">Submit</button>
 
 				        </div>
 				        
@@ -348,6 +348,10 @@
 	    
 	</div>
 
+	<form id="form" action="Submit" method="POST">
+		<input type="submit" name="submit" id="submit" value="FINISH">
+	</form>
+
 
 	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 	<!-- <script src="js/jquery-3.2.1.js"></script>  *****FOR NO CONNECTION****** -->
@@ -359,9 +363,7 @@
     <script type="text/javascript">
           $(document).ready(function() {
 
-          	var count=10;
-          	var a=new Array(3);
-          	a[0]=a[1]=a[2]=0;
+          	
 
             $('#table').DataTable();  //Table name to put data table function
             $("#error_text1").hide();
@@ -391,6 +393,9 @@
      </script>
      <script type="text/javascript">
 
+     	var count=10;
+          	var a=new Array(3);
+          	a[0]=a[1]=a[2]=0;
      	$("#level_one_button").click(function(){
 
      		$word1=$("#t1_word").val();
@@ -480,11 +485,12 @@
      	});
      </script>
      <script type="text/javascript">
+     var choice1,choice2;
      	$(".pics").click(function(){
      		$(this).css("border","1px solid #1e88e5");
      		var id=$(this).attr("id");
 
-     		var choice1,choice2;
+     		
 
      		if(id=="img1"){choice1=1;$("#img2").css("border","0");$("#img3").css("border","0");}
      		else if(id=="img2"){choice1=2;$("#img1").css("border","0");$("#img3").css("border","0");}
@@ -494,8 +500,12 @@
      		else if(id=="img5"){choice2=5;$("#img4").css("border","0");$("#img6").css("border","0");}
      		else if(id=="img6"){choice2=6;$("#img4").css("border","0");$("#img5").css("border","0");}
 
-     		if(choice1==1 && choice2==1){
+     		
+     	});
+     	$("#final_button").click(function(){
+     		if(choice1==1 && choice2==4){
      			window.location.href="congo.html";
+     			
      		}else{
      			count=count-1;
      			a[2]++;
