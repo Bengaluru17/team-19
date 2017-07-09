@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Project</title>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../css/jquery.dataTables.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<style type="text/css">
+		<style type="text/css">
+		body{
+			background: #ab0303;
+		    background-repeat: no-repeat;
+		    background-position: center 0;
+		    background-size: cover;
+		    background-attachment: fixed;
+		    font-family: 'Roboto', sans-serif;
+		}
+		.wrapper{
+			width: 90%;
+			margin:auto;
+		}
+		.full-height {
+		    height: 100vh;
+		}
+		.flex-center {
+		    align-items: center;
+		    display: flex;
+		    justify-content: center;
+		    
+		}
+		.position-ref {
+		    position: relative;
+		}
+		input{
+			background: transparent;
+			border:1px solid #000;
+			box-shadow: 0;
+			padding: 15px;
+			margin: 10px;
+			color: #000;
+			width: 100%;
+		}
+		#button{
+			background: transparent;
+			border:1px solid #000;
+			box-shadow: 0;
+			padding: 15px;
+			margin: 10px;
+			color: #000;
+			width: 100%;
+		}
+		input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+		    color:    #000;
+		}
+		input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+		   color:    #000;
+		   opacity:  1;
+		}
+		input::-moz-placeholder { /* Mozilla Firefox 19+ */
+		   color:    #000;
+		   opacity:  1;
+		}
+		input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+		   color:    #000;
+		}
+		a{
+			color: #000;
+			text-decoration: none;
+			font-size: 16px;
+		}
+		a:hover{
+			color: #000;
+			text-decoration: none;
+		}
+		#logo{
+			width:150px;
+		}
+		.forms{
+			width: 90%;
+			margin: auto;
+		}
+		.forms:hover{
+			border:1px solid #000;
+		}
+		hr{
+			margin-top: 40px;
+			margin-bottom: 20px;
+		}
+		.tabs-menu {
+		    height: 30px;
+		    float: left;
+		    clear: both;
+		}
+		.tabs-menu ul{
+			width: 100%;
+		}
+		.tabs-menu li {
+			list-style: none;
+		    height: 30px;
+		    line-height: 30px;
+		    float: left;
+		    margin-right: 10px;
+		    background-color: #ccc;
+		    border-top: 1px solid #d4d4d1;
+		    border-right: 1px solid #d4d4d1;
+		    border-left: 1px solid #d4d4d1;
+		}
+
+		.tabs-menu li.current {
+		    position: relative;
+		    background-color: #fff;
+		    border-bottom: 1px solid #fff;
+		    z-index: 5;
+		}
+
+		.tabs-menu li a {
+		    padding: 10px;
+		    text-transform: uppercase;
+		    color: #fff;
+		    text-decoration: none; 
+		}
+
+		.tabs-menu .current a {
+		    color: #2e7da3;
+		}
+
+		.tab {
+		    border: 1px solid #d4d4d1;
+		    background-color: #fff;
+		    float: left;
+		    margin-bottom: 20px;
+		    width: auto;
+		}
+
+		.tab-content {
+		    width: 660px;
+		    padding: 20px;
+		    display: none;
+		}
+
+		#tab-1 {
+		 display: block;   
+		}
+
+	</style>
+	</style>
+</head>
+<body>
+
+<nav class="navbar navbar-default" style="background: #1e88e5; border:0;border-radius: 0;">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="#" style="color: #fff;">Amogh Sadhna</a>
+	    </div>
+
+	    
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+	    	<ul class="nav navbar-nav navbar-right">
+
+	    		<li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #fff;" id="dropdown_options">Progress<span class="caret"></span></a>
+		          <ul class="dropdown-menu">
+		            <li><a href="#">Gold 10</a></li>
+		            <li><a href="#">Silver 10</a></li>
+		            <li><a href="#">Bronze 10</a></li>
+		          </ul>
+		        </li>
+
+		        
+	    		<li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #fff;" id="dropdown_options">Options<span class="caret"></span></a>
+		          <ul class="dropdown-menu">
+		            <li><a href="#">Profile</a></li>
+		            <li><a href="#">Logout</a></li>
+		          </ul>
+		        </li>
+
+		        
+		      </ul>
+
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+	
+	<div class="wrapper">
+		
+		
+			<div id="tabs-container">
+			    <ul class="tabs-menu">
+			        <li class="current"><a href="#tab-1">Level 1</a></li>
+			        <li><a href="#tab-2">Level 2</a></li>
+			        <li><a href="#tab-3">Level 3</a></li>
+			        <li><a href="#tab-4">Level 4</a></li>
+			        <li><a href="#tab-5">Level 5</a></li>
+			    </ul>
+			    <div class="tab">
+			        <div id="tab-1" class="tab-content">
+
+			            <form class="form-inline">
+							<div class="form-group">
+								<label>Name</label>
+								<input type="text" class="form-control" id="exampleInputName2">
+							</div>
+
+							<div class="form-group">
+								<label>Name of father/Gurdian/Husband</label>
+								<input type="text" class="form-control" id="exampleInputName2">
+							</div>
+							<div class="form-group">
+								<label>Date of Birth</label>
+								<input type="text" class="form-control" id="exampleInputName2">
+							</div>
+
+							<div class="radio">
+								<label>
+									<input type="radio" name="optionsRadios" id="optionsRadios1" value="Male"> Male
+								</label>
+								<label>
+									<input type="radio" name="optionsRadios" id="optionsRadios1" value="Female"> Female
+								</label>
+							</div>
+							<button type="submit" class="btn btn-default">Submit</button>
+						</form>
+
+			        </div>
+
+			        <div id="tab-2" class="tab-content">
+			            <h1>Level 2</h1>
+			        </div>
+			        <div id="tab-3" class="tab-content">
+			            <h1>Level 3</h1>
+			        </div>
+			        <div id="tab-4" class="tab-content">
+			            <h1>Level 4</h1>
+			        </div>
+			        <div id="tab-5" class="tab-content">
+			            <h1>Level 5</h1>
+			        </div>
+			    </div>
+			</div>
+	    
+	</div>
+
+
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<!-- <script src="js/jquery-3.2.1.js"></script>  *****FOR NO CONNECTION****** -->
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/d3.js"></script>
+    <script src="../js/custom.js"></script>
+    <script src="../js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript">
+          $(document).ready(function() {
+            $('#table').DataTable();  //Table name to put data table function
+          } );
+      </script>
+     <script type="text/javascript">
+			$(document).ready(function() {
+			    $(".tabs-menu a").click(function(event) {
+			        event.preventDefault();
+			        $(this).parent().addClass("current");
+			        $(this).parent().siblings().removeClass("current");
+			        var tab = $(this).attr("href");
+			        $(".tab-content").not(tab).css("display", "none");
+			        $(tab).fadeIn();
+			    });
+			});
+     </script>
+</body>
+</html>

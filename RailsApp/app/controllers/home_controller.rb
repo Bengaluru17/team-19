@@ -10,6 +10,9 @@ class HomeController < ApplicationController
   def basic
   end
 
+  def upload
+  end
+  
   def submit
   	@arr = params[:array]
   	@arr = @arr.split(',')
