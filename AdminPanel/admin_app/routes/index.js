@@ -12,11 +12,11 @@ router.get('/main', function(req, res) {
 	var result;
 
 var client = new pg.Client({
-	user:"rnefboxmyfnhwa",
-	password:"d4ad0a9d817f41fd48994b9af0c2ea0b28c817c22e477311cd21ccf23a3ab6d4",
-	database:"d47srlbsoj19eq",
+	user:"ylvyrtycszshqx",
+	password:"d835faa696e7d370a74def7c74c01f3f02a8b317b70a8e23e1aac616fc53ec06",
+	database:"d2de65l6fkntou",
 	port:5432,
-	host:"ec2-54-235-181-120.compute-1.amazonaws.com",
+	host:"ec2-54-225-182-108.compute-1.amazonaws.com",
 	ssl:true
 });
 client.connect();
@@ -27,7 +27,7 @@ client.connect();
 
 
 
-var query = client.query("SELECT * FROM scores");
+var query = client.query("SELECT * FROM answers");
 query.on("row", function(row,result) {
     result.addRow(row);
 });
